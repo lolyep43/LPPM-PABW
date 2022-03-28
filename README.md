@@ -21,9 +21,15 @@ Request:
   - Endpoint : /api/hasil_penelitian
   - Header :
   - Body :
+  
   {
+    
     "id" : "string, unique",
+    
     "name" : "string",
+    
     "price" : "long",
+    
     "quantity" : "integer"
+
 }
