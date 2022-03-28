@@ -74,6 +74,7 @@ Request:
    - Respone:
 
 {
+
     code : "number"
     status : "string"
         "id" : "bigint, primary",
@@ -86,5 +87,6 @@ Request:
         "tahun" : "string"
         "created_at" : "timestamp",
         "updated_at" : "timestamp"
+        
 }
     
