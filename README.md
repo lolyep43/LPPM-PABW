@@ -25,11 +25,8 @@ Request:
   {
     
     "id" : "string, unique",
-    
     "name" : "string",
-    
     "price" : "long",
-    
     "quantity" : "integer"
 
 }
