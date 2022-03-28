@@ -38,6 +38,7 @@ Request:
   - Respone:
     
 {
+
         "id" : "bigint, primary",
         "peneliti" : "string",
         "judul" : "string",
@@ -48,6 +49,7 @@ Request:
         "tahun" : "string"
         "created_at" : "timestamp",
         "updated_at" : "timestamp"
+        
 }
 
 # Menambah data Hasil Penelitian
