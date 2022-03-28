@@ -58,14 +58,14 @@ Request:
   - Body :
   
     
-    "id" : "bigint, primary",
-    "peneliti" : "string",
-    "judul" : "string",
-    "fokus_riset" : "long",
-    "deskripsi" : "text",
-    "manfaat" : "text",
-    "foto" : "string",
-    "tahun" : "string"
+        "id" : "bigint, primary",
+        "peneliti" : "string",
+        "judul" : "string",
+        "fokus_riset" : "long",
+        "deskripsi" : "text",
+        "manfaat" : "text",
+        "foto" : "string",
+        "tahun" : "string"
 
    - Respone:
 
