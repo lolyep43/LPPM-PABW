@@ -37,8 +37,8 @@ Request:
   - Body :
   - Respone:
     
-      {
       
+        {
         "id" : "bigint, primary",
         "peneliti" : "string",
         "judul" : "string",
@@ -49,8 +49,7 @@ Request:
         "tahun" : "string"
         "created_at" : "timestamp",
         "updated_at" : "timestamp"
-        
-      }
+        }
 
 # Menambah data Hasil Penelitian
 Request:
@@ -58,9 +57,8 @@ Request:
   - Endpoint : /api/tambah-hasil-penelitian
   - Header :
   - Body :
-  
-       {
-       
+  -
+        {
         "id" : "bigint, primary",
         "peneliti" : "string",
         "judul" : "string",
@@ -69,11 +67,10 @@ Request:
         "manfaat" : "text",
         "foto" : "string",
         "tahun" : "string"
-        
-       }
+        }
    - Respone:
-   {
    
+    {
     code : "number"
     status : "string"
         "id" : "bigint, primary",
@@ -86,8 +83,7 @@ Request:
         "tahun" : "string"
         "created_at" : "timestamp",
         "updated_at" : "timestamp"
-        
-   }
+    }
         
         
 
