@@ -57,7 +57,6 @@ Request:
   - Header :
   - Body :
   
-  {
     
     "id" : "bigint, primary",
     "peneliti" : "string",
@@ -68,10 +67,7 @@ Request:
     "foto" : "string",
     "tahun" : "string"
 
-}
    - Respone:
-
-{
 
     code : "number"
     status : "string"
