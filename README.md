@@ -37,7 +37,6 @@ Request:
   - Body :
   - Respone:
     
-{
 
         "id" : "bigint, primary",
         "peneliti" : "string",
@@ -50,7 +49,6 @@ Request:
         "created_at" : "timestamp",
         "updated_at" : "timestamp"
         
-}
 
 # Menambah data Hasil Penelitian
 Request:
