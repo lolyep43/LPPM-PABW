@@ -66,7 +66,6 @@ Request:
         "manfaat" : "text",
         "foto" : "string",
         "tahun" : "string"
-
    - Respone:
 
     code : "number"
