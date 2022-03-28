@@ -21,13 +21,9 @@ Request:
   - Endpoint : /api/hasil_penelitian
   - Header :
   - Body :
-      [{
-        "id": "bigint",
-        "peneliti": "string",
-        "judul": "string",
-        "fokus_riset": "string",
-        "deskripsi": "text",
-        "manfaat": "text",
-        "foto": "string",
-        "tahun": "string"
-      }]
+  {
+    "id" : "string, unique",
+    "name" : "string",
+    "price" : "long",
+    "quantity" : "integer"
+}
