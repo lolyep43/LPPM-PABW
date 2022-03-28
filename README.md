@@ -73,16 +73,18 @@ Request:
     {
         code : "number"
         status : "string"
-            "id" : "bigint, primary",
-            "peneliti" : "string",
-            "judul" : "string",
-            "fokus_riset" : "long",
-            "deskripsi" : "text",
-            "manfaat" : "text",
-            "foto" : "string",
-            "tahun" : "string"
-            "created_at" : "timestamp",
-            "updated_at" : "timestamp"
+            {
+                "id" : "bigint, primary",
+                "peneliti" : "string",
+                "judul" : "string",
+                "fokus_riset" : "long",
+                "deskripsi" : "text",
+                "manfaat" : "text",
+                "foto" : "string",
+                "tahun" : "string"
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp"
+            }
     }
         
         
