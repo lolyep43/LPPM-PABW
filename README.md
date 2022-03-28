@@ -31,13 +31,13 @@
 
 # Melihat Hasil Penelitian
 Request:
-  - Method : GET
+  - Method : POST
   - Endpoint : /api/list-hasil-penelitian
   - Header :
   - Body :
   - Respone:
     
-
+      {
         "id" : "bigint, primary",
         "peneliti" : "string",
         "judul" : "string",
@@ -48,7 +48,7 @@ Request:
         "tahun" : "string"
         "created_at" : "timestamp",
         "updated_at" : "timestamp"
-        
+      }
 
 # Menambah data Hasil Penelitian
 Request:
@@ -57,7 +57,7 @@ Request:
   - Header :
   - Body :
   
-    
+       {
         "id" : "bigint, primary",
         "peneliti" : "string",
         "judul" : "string",
@@ -66,8 +66,9 @@ Request:
         "manfaat" : "text",
         "foto" : "string",
         "tahun" : "string"
+       }
    - Respone:
-
+   {
     code : "number"
     status : "string"
         "id" : "bigint, primary",
@@ -80,6 +81,7 @@ Request:
         "tahun" : "string"
         "created_at" : "timestamp",
         "updated_at" : "timestamp"
+   }
         
         
 
