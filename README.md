@@ -39,16 +39,16 @@ Request:
     
       
         {
-        "id" : "bigint, primary",
-        "peneliti" : "string",
-        "judul" : "string",
-        "fokus_riset" : "long",
-        "deskripsi" : "text",
-        "manfaat" : "text",
-        "foto" : "string",
-        "tahun" : "string"
-        "created_at" : "timestamp",
-        "updated_at" : "timestamp"
+            "id" : "bigint, primary",
+            "peneliti" : "string",
+            "judul" : "string",
+            "fokus_riset" : "long",
+            "deskripsi" : "text",
+            "manfaat" : "text",
+            "foto" : "string",
+            "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
         }
 
 # Menambah data Hasil Penelitian
@@ -59,30 +59,30 @@ Request:
   - Body :
   -
         {
-        "id" : "bigint, primary",
-        "peneliti" : "string",
-        "judul" : "string",
-        "fokus_riset" : "long",
-        "deskripsi" : "text",
-        "manfaat" : "text",
-        "foto" : "string",
-        "tahun" : "string"
+            "id" : "bigint, primary",
+            "peneliti" : "string",
+            "judul" : "string",
+            "fokus_riset" : "long",
+            "deskripsi" : "text",
+            "manfaat" : "text",
+            "foto" : "string",
+            "tahun" : "string"
         }
    - Respone:
    
     {
-    code : "number"
-    status : "string"
-        "id" : "bigint, primary",
-        "peneliti" : "string",
-        "judul" : "string",
-        "fokus_riset" : "long",
-        "deskripsi" : "text",
-        "manfaat" : "text",
-        "foto" : "string",
-        "tahun" : "string"
-        "created_at" : "timestamp",
-        "updated_at" : "timestamp"
+        code : "number"
+        status : "string"
+            "id" : "bigint, primary",
+            "peneliti" : "string",
+            "judul" : "string",
+            "fokus_riset" : "long",
+            "deskripsi" : "text",
+            "manfaat" : "text",
+            "foto" : "string",
+            "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
     }
         
         
