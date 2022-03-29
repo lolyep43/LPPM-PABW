@@ -89,7 +89,7 @@ Request:
 # Mengubah data Hasil Penelitian
 Request:
   - Method : PUT
-  - Endpoint : /api/tambah-hasil-penelitian/{id}
+  - Endpoint : /api/ubah-hasil-penelitian/{id}
   - Header :
   - Body :
   
@@ -199,7 +199,7 @@ Request:
 # Mengubah data Hasil Pengabdian
 Request:
   - Method : PUT
-  - Endpoint : /api/tambah-hasil-pengabdian/{id}
+  - Endpoint : /api/ubah-hasil-pengabdian/{id}
   - Header :
   - Body :
   
@@ -260,6 +260,115 @@ Request:
       
         {
             "id" : "bigint, primary, auto-increment",
+            "pengarang" : "string",
+            "judul" : "string",
+            "deskripsi" : "long",
+            "penerbit" : "text",
+            "gambar" : "text",
+            "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+
+# Menambah data Buku Ajar
+Request:
+  - Method : POST
+  - Endpoint : /api/tambah-buku-ajar
+  - Header :
+  - Body :
+  
+        {
+            "pengarang" : "string",
+            "judul" : "string",
+            "deskripsi" : "text",
+            "penerbit" : "string",
+            "gambar" : "string",
+            "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data : {
+                "id" : "bigint, primary, auto-increment",
+                "pengarang" : "string",
+                "judul" : "string",
+                "deskripsi" : "text",
+                "penerbit" : "string",
+                "gambar" : "string",
+                "tahun" : "string"
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp"
+              }
+    }
+
+# Mengubah data Buku Ajar
+Request:
+  - Method : PUT
+  - Endpoint : /api/ubah-buku-ajar/{id}
+  - Header :
+  - Body :
+  
+        {
+            "id" : "bigint, primary",
+            "pengarang" : "string",
+            "judul" : "string",
+            "deskripsi" : "text",
+            "penerbit" : "string",
+            "gambar" : "string",
+            "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data: {
+                "id" : "bigint, primary, auto-increment",
+                "pengarang" : "string",
+                "judul" : "string",
+                "deskripsi" : "text",
+                "penerbit" : "string",
+                "gambar" : "string",
+                "tahun" : "string"
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp"
+            }
+    }
+
+# Menghapus data Buku Ajar
+Request:
+  - Method : DELETE
+  - Endpoint : /api/hapus-buku-ajar/{id}
+  - Header :
+  - Body :
+  
+        {
+            "id" : "bigint, primary",
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+    }
+
+# Melihat Publikasi Ilmiah
+Request:
+  - Method : GET
+  - Endpoint : /api/list-buku-ajar
+  - Header :
+  - Body :
+  - Respone:
+    
+      
+        {
+            "id" : "bigint, primary, auto-increment",
             "peneliti" : "string",
             "judul" : "string",
             "fokus_riset" : "long",
@@ -271,10 +380,10 @@ Request:
             "updated_at" : "timestamp"
         }
 
-# Menambah data Buku Ajar
+# Menambah data Publikasi Ilmiah
 Request:
   - Method : POST
-  - Endpoint : /api/tambah-hasil-pengabdian
+  - Endpoint : /api/tambah-buku-ajar
   - Header :
   - Body :
   
@@ -286,6 +395,8 @@ Request:
             "manfaat" : "text",
             "foto" : "string",
             "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
         }
    - Respone:
    
@@ -293,7 +404,7 @@ Request:
         code : "number"
         status : "string"
         data : {
-                "id" : "bigint, primary, auto-increment",
+               "id" : "bigint, primary, auto-increment",
                 "peneliti" : "string",
                 "judul" : "string",
                 "fokus_riset" : "long",
@@ -306,15 +417,15 @@ Request:
               }
     }
 
-# Mengubah data Buku Ajar
+# Mengubah data Publikasi Ilmiah
 Request:
   - Method : PUT
-  - Endpoint : /api/tambah-hasil-pengabdian/{id}
+  - Endpoint : /api/ubah-buku-ajar/{id}
   - Header :
   - Body :
   
         {
-            "id" : "bingint, primary"
+            "id" : "bigint, primary",
             "peneliti" : "string",
             "judul" : "string",
             "fokus_riset" : "long",
@@ -322,6 +433,8 @@ Request:
             "manfaat" : "text",
             "foto" : "string",
             "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
         }
    - Respone:
    
@@ -329,7 +442,7 @@ Request:
         code : "number"
         status : "string"
         data: {
-                "id" : "bigint, primary",
+                "id" : "bigint, primary, auto-increment",
                 "peneliti" : "string",
                 "judul" : "string",
                 "fokus_riset" : "long",
@@ -342,10 +455,10 @@ Request:
             }
     }
 
-# Menghapus data Buku Ajar
+# Menghapus data Publikasi Ilmiah
 Request:
   - Method : DELETE
-  - Endpoint : /api/hapus-hasil-pengabdian/{id}
+  - Endpoint : /api/hapus-buku-ajar/{id}
   - Header :
   - Body :
   
