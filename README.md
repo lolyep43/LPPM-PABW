@@ -361,7 +361,7 @@ Request:
 # Melihat Publikasi Ilmiah
 Request:
   - Method : GET
-  - Endpoint : /api/list-buku-ajar
+  - Endpoint : /api/list-publikasi-ilmiah
   - Header :
   - Body :
   - Respone:
@@ -383,7 +383,7 @@ Request:
 # Menambah data Publikasi Ilmiah
 Request:
   - Method : POST
-  - Endpoint : /api/tambah-buku-ajar
+  - Endpoint : /api/tambah-publikasi-ilmiah
   - Header :
   - Body :
   
@@ -420,7 +420,7 @@ Request:
 # Mengubah data Publikasi Ilmiah
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-buku-ajar/{id}
+  - Endpoint : /api/ubah-publikasi-ilmiah/{id}
   - Header :
   - Body :
   
@@ -458,7 +458,7 @@ Request:
 # Menghapus data Publikasi Ilmiah
 Request:
   - Method : DELETE
-  - Endpoint : /api/hapus-buku-ajar/{id}
+  - Endpoint : /api/hapus-publikasi-ilmiah/{id}
   - Header :
   - Body :
   
@@ -471,7 +471,210 @@ Request:
         code : "number"
         status : "string"
     }
-        
+
+# Melihat Inovasi Mandiri
+Request:
+  - Method : GET
+  - Endpoint : /api/list-inovasi-mandiri
+  - Header :
+  - Body :
+  - Respone:
+    
+      
+        {
+            "id" : "bigint, primary, auto-increment",
+            "judul" : "string",
+            "konten" : "string",
+            "gambar" : "long",
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+
+# Menambah data Inovasi Mandiri
+Request:
+  - Method : POST
+  - Endpoint : /api/tambah-inovasi-mandiri
+  - Header :
+  - Body :
+  
+        {
+             "judul" : "string",
+             "konten" : "string",
+             "gambar" : "long",
+             "created_at" : "timestamp",
+             "updated_at" : "timestamp"
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data : {
+               "id" : "bigint, primary, auto-increment",
+               "judul" : "string",
+               "konten" : "string",
+               "gambar" : "long",
+               "created_at" : "timestamp",
+               "updated_at" : "timestamp"
+              }
+    }
+
+# Mengubah data Inovasi Mandiri
+Request:
+  - Method : PUT
+  - Endpoint : /api/ubah-inovasi-mandiri/{id}
+  - Header :
+  - Body :
+  
+        {
+            "id" : "bigint, primary",
+            "judul" : "string",
+            "konten" : "string",
+            "gambar" : "long",
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data: {
+                "id" : "bigint, primary, auto-increment",
+                "judul" : "string",
+                "konten" : "string",
+                "gambar" : "long",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp"
+            }
+    }
+
+# Menghapus data Inovasi Mandiri
+Request:
+  - Method : DELETE
+  - Endpoint : /api/hapus-inovasi-mandiri/{id}
+  - Header :
+  - Body :
+  
+        {
+            "id" : "bigint, primary",
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+    }
+# Menghapus data Inovasi Mandiri
+Request:
+  - Method : DELETE
+  - Endpoint : /api/hapus-inovasi-mandiri/{id}
+  - Header :
+  - Body :
+  
+        {
+            "id" : "bigint, primary",
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+    }
+
+# Melihat Inovasi dengan Industri
+Request:
+  - Method : GET
+  - Endpoint : /api/list-inovasi-industri
+  - Header :
+  - Body :
+  - Respone:
+    
+      
+        {
+            "id" : "bigint, primary, auto-increment",
+            "judul" : "string",
+            "konten" : "string",
+            "gambar" : "long",
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+
+# Menambah data Inovasi dengan Industri
+Request:
+  - Method : POST
+  - Endpoint : /api/tambah-inovasi-industri
+  - Header :
+  - Body :
+  
+        {
+             "judul" : "string",
+             "konten" : "string",
+             "gambar" : "long",
+             "created_at" : "timestamp",
+             "updated_at" : "timestamp"
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data : {
+               "id" : "bigint, primary, auto-increment",
+               "judul" : "string",
+               "konten" : "string",
+               "gambar" : "long",
+               "created_at" : "timestamp",
+               "updated_at" : "timestamp"
+              }
+    }
+
+# Mengubah data Inovasi dengan Industri
+Request:
+  - Method : PUT
+  - Endpoint : /api/ubah-inovasi-industri/{id}
+  - Header :
+  - Body :
+  
+        {
+            "id" : "bigint, primary",
+            "judul" : "string",
+            "konten" : "string",
+            "gambar" : "long",
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data: {
+                "id" : "bigint, primary, auto-increment",
+                "judul" : "string",
+                "konten" : "string",
+                "gambar" : "long",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp"
+            }
+    }
+
+# Menghapus data Inovasi dengan Industri
+Request:
+  - Method : DELETE
+  - Endpoint : /api/hapus-inovasi-industri/{id}
+  - Header :
+  - Body :
+  
+        {
+            "id" : "bigint, primary",
+        }
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+    }
         
 
     
