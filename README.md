@@ -565,22 +565,6 @@ Request:
         code : "number"
         status : "string"
     }
-# Menghapus data Inovasi Mandiri
-Request:
-  - Method : DELETE
-  - Endpoint : /api/hapus-inovasi-mandiri/{id}
-  - Header :
-  - Body :
-  
-        {
-            "id" : "bigint, primary",
-        }
-   - Respone:
-   
-    {
-        code : "number"
-        status : "string"
-    }
 
 # Melihat Inovasi dengan Industri
 Request:
