@@ -3,19 +3,16 @@
 # Module
 1. Login
 
-2. Luaran 
-    1. Hasil Penelitian 
-    2. Hasil Pengabdian 
-    3. Buku Ajar 
-    4. Publikasi Ilmiah
+2. Beranda
+    
 
-2. Inovasi
-    1. Inovasi Mandiri 
-    2. Inovasi dengan Industri
+2. Tentang Kami
+   
+3.Testimoni
 
-4.Dokumen
+4.Blog
 
-5.Galeri
+5. FAQ
 
 
 
