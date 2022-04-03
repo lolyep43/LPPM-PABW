@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\blogModel;
 use App\Models\qnaModel;
 use App\Models\anggotaModel;
@@ -317,6 +318,7 @@ class API extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
+            'password' => 'required',
             'role' => 'required',
 
         ]);
@@ -335,8 +337,60 @@ class API extends Controller
             'Data' => [
                 'name' => $request->name,
                 'email' => $request->email,
-                'role' => $request->role,
+                'password' => Hash::make($request->password),
+                'role' => $request->role
             ]
         ],200);
+    }
+
+    public function UserEdit(Request $request, $id){
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'role' => 'required',
+        ]);
+
+        $data = User::findOrFail($id);
+
+        if($request){
+
+            $data_update = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role
+            ];
+        } else {
+            $data_update = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role
+            ];
+        }
+
+        // $data->update($data_update);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil dirubah',
+            'Data' => [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role
+            ],
+            $data->update($data_update)
+        ],200);
+    }
+
+    public function UserDelete($id){
+        $data = User::findOrFail($id);
+        $data->delete();
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil dihapus'], 200);
     }
 }
