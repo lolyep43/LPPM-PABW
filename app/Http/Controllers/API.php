@@ -220,12 +220,8 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data berhasil dihapus'], 200);
     }
-}
-
-
-class blogController extends Controller
-{
-    public function blogIndex()
+    
+        public function blogIndex()
     {
         $data = blogModel::all();
         return json_encode($data);
@@ -310,5 +306,4 @@ class blogController extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data blog berhasil dihapus'], 200);
     }
-    
 }
