@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class anggotaModel extends Model
 {
     protected $table = 'anggota';
-    protected $fillable = ['level','jabatan','nama'];
+    protected $fillable = ['level','jabatan','nama','foto'];
     protected $guarded = [];
 }

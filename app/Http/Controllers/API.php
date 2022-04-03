@@ -130,5 +130,94 @@ class API extends Controller
             'Pesan' => 'Data berhasil dihapus'], 200);
     }
 
+    public function AnggotaIndex(){
+        $data = anggotaModel::all();
+        return json_encode($data);
+    }
 
+    public function AnggotaStore(Request $request){
+
+        $this->validate($request, [
+            'level' => 'required',
+            'jabatan' => 'required',
+            'nama' => 'required',
+
+        ]);
+
+        $foto = $request->foto;
+        $new_foto = time() . $foto->getClientOriginalName();
+
+        $data = anggotaModel::create([
+            'level' => $request->level,
+            'jabatan' => $request->jabatan,
+            'nama' => $request->nama,
+            'foto' => 'public/uploads/anggota' . $new_foto,
+        ]);
+
+        $foto->move('public/uploads/anggota/', $new_foto);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil ditambah',
+            'Data' => [
+                'level' => $request->level,
+                'jabatan' => $request->jabatan,
+                'nama' => $request->nama,
+                'foto' => 'public/uploads/anggota' . $new_foto,
+            ]
+        ],200);
+    }
+
+    public function anggotaEdit(Request $request, $id){
+        $this->validate($request, [
+            'level' => 'required',
+            'jabatan' => 'required',
+            'nama' => 'required',
+        ]);
+
+        $data = anggotaModel::findOrFail($id);
+
+        if($request->has('foto')){
+            $foto = $request->foto;
+            $new_foto = time() . $foto->getClientOriginalName();
+            $foto->move('public/uploads/anggota/', $new_foto);
+
+            $data_update = [
+                'level' => $request->level,
+                'jabatan' => $request->jabatan,
+                'nama' => $request->nama,
+                'foto' => 'public/uploads/anggota' . $new_foto,
+            ];
+        } else {
+            $data_update = [
+                'level' => $request->level,
+                'jabatan' => $request->jabatan,
+                'nama' => $request->nama,
+                'foto' => 'public/uploads/anggota' . $new_foto,
+            ];
+        }
+
+        // $data->update($data_update);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil dirubah',
+            'Data' => [
+                'level' => $request->level,
+                'jabatan' => $request->jabatan,
+                'nama' => $request->nama,
+                'foto' => 'public/uploads/anggota' . $new_foto,
+            ],
+            $data->update($data_update)
+        ],200);
+    }
+
+    public function anggotaDelete($id){
+        $data = anggotaModel::findOrFail($id);
+        $data->delete();
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil dihapus'], 200);
+    }
 }

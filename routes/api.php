@@ -23,3 +23,8 @@ Route::get('lihat-portofolio', [API::class, 'PortofolioIndex']);
 Route::post('tambah-portofolio', [API::class, 'PortofolioStore']);
 Route::put('edit-portofolio/{id}',  [API::class, 'PortofolioEdit']);
 Route::delete('hapus-portofolio/{id}',  [API::class, 'PortofolioDelete']);
+
+Route::get('lihat-anggota', [API::class, 'AnggotaIndex']);
+Route::post('tambah-anggota', [API::class, 'AnggotaStore']);
+Route::put('edit-anggota/{id}',  [API::class, 'AnggotaEdit']);
+Route::delete('hapus-anggota/{id}',  [API::class, 'AnggotaDelete']);
