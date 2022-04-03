@@ -2,67 +2,61 @@
 
 # Module
 1. Login
-
 2. Beranda
-    
-
-2. Tentang Kami
-   
-3.Testimoni
-
-4.Blog
-
-5. FAQ
+3. Tentang Kami
+4. Anggota
+5. Testimoni
+6. Blog
+7. FAQ
+8. Logout
 
 
 
-
-
-
-
-
-
-
-
-
-
-# Melihat Hasil Penelitian
+# Mengambil Seluruh Portofolio
 Request:
   - Method : GET
-  - Endpoint : /api/list-hasil-penelitian
-  - Header :
+  - Endpoint : /api/lihat-portofolio
+  - Header : 
   - Body :
   - Respone:
     
       
         {
             "id" : "bigint, primary, auto-increment",
-            "peneliti" : "string",
+            "jenis" : "string",
             "judul" : "string",
-            "fokus_riset" : "long",
-            "deskripsi" : "text",
-            "manfaat" : "text",
+            "probblem" : "long",
+            "solusi" : "text",
+            "fitur" : "text",
+            "metode" : "string",
+            "tahun" : "string",
             "foto" : "string",
-            "tahun" : "string"
             "created_at" : "timestamp",
-            "updated_at" : "timestamp"
+            "updated_at" : "timestamp",
+            "slug"  : "string"
+            
+
         }
 
-# Menambah data Hasil Penelitian
+# Menambah data Portofolio
 Request:
   - Method : POST
-  - Endpoint : /api/tambah-hasil-penelitian
+  - Endpoint : /api/tambah-portofolio
   - Header :
   - Body :
   
         {
-            "peneliti" : "string",
+            "jenis" : "string",
             "judul" : "string",
-            "fokus_riset" : "long",
-            "deskripsi" : "text",
-            "manfaat" : "text",
+            "probblem" : "long",
+            "solusi" : "text",
+            "fitur" : "text",
+            "metode" : "string",
+            "tahun" : "string",
             "foto" : "string",
-            "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp",
+            "slug"  : "string"
         }
    - Respone:
    
@@ -71,34 +65,40 @@ Request:
         status : "string"
         data : {
                 "id" : "bigint, primary, auto-increment",
-                "peneliti" : "string",
+                "jenis" : "string",
                 "judul" : "string",
-                "fokus_riset" : "long",
-                "deskripsi" : "text",
-                "manfaat" : "text",
+                "probblem" : "long",
+                "solusi" : "text",
+                "fitur" : "text",
+                "metode" : "string",
+                "tahun" : "string",
                 "foto" : "string",
-                "tahun" : "string"
                 "created_at" : "timestamp",
-                "updated_at" : "timestamp"
+                "updated_at" : "timestamp",
+                "slug"  : "string"
               }
     }
 
-# Mengubah data Hasil Penelitian
+# Mengubah data Portofolio
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-hasil-penelitian/{id}
+  - Endpoint : /api/ubah-portofolio/{id}
   - Header :
   - Body :
   
         {
             "id" : "bingint, primary"
-            "peneliti" : "string",
+            "jenis" : "string",
             "judul" : "string",
-            "fokus_riset" : "long",
-            "deskripsi" : "text",
-            "manfaat" : "text",
+            "probblem" : "long",
+            "solusi" : "text",
+            "fitur" : "text",
+            "metode" : "string",
+            "tahun" : "string",
             "foto" : "string",
-            "tahun" : "string"
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp",
+            "slug"  : "string"
         }
    - Respone:
    
@@ -107,22 +107,24 @@ Request:
         status : "string"
         data: {
                 "id" : "bigint, primary",
-                "peneliti" : "string",
+                "jenis" : "string",
                 "judul" : "string",
-                "fokus_riset" : "long",
-                "deskripsi" : "text",
-                "manfaat" : "text",
+                "probblem" : "long",
+                "solusi" : "text",
+                "fitur" : "text",
+                "metode" : "string",
+                "tahun" : "string",
                 "foto" : "string",
-                "tahun" : "string"
                 "created_at" : "timestamp",
-                "updated_at" : "timestamp"
+                "updated_at" : "timestamp",
+                "slug"  : "string"
             }
     }
 
-# Menghapus data Hasil Penelitian
+# Menghapus data Portofolio
 Request:
   - Method : DELETE
-  - Endpoint : /api/hapus-hasil-penelitian/{id}
+  - Endpoint : /api/hapus-portofolio/{id}
   - Header :
   - Body :
   
@@ -132,7 +134,8 @@ Request:
    - Respone:
    
     {
-        code : "number"
-        status : "string"
+        code : "number",
+        status : "string",
+        pesan : "string"
     }
  
