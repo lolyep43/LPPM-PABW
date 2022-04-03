@@ -221,7 +221,7 @@ class API extends Controller
             'Pesan' => 'Data berhasil dihapus'], 200);
     }
     
-        public function blogIndex()
+    public function blogIndex()
     {
         $data = blogModel::all();
         return json_encode($data);
