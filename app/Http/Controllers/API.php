@@ -306,4 +306,37 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data blog berhasil dihapus'], 200);
     }
+
+    public function UserIndex(){
+        $data = User::all();
+        return json_encode($data);
+    }
+
+    public function UserStore(Request $request){
+
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+
+        ]);
+
+        $data = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role
+        ]);
+
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil ditambah',
+            'Data' => [
+                'name' => $request->name,
+                'email' => $request->email,
+                'role' => $request->role,
+            ]
+        ],200);
+    }
 }
