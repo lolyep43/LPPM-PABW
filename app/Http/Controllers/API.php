@@ -221,3 +221,94 @@ class API extends Controller
             'Pesan' => 'Data berhasil dihapus'], 200);
     }
 }
+
+
+class blogController extends Controller
+{
+    public function blogIndex()
+    {
+        $data = blogModel::all();
+        return json_encode($data);
+    }
+
+    public function blogStore(Request $request){
+        $this->validate($request, [
+            'judul' => 'required',
+            'deskripsi' => 'required'
+
+        ]);
+
+        $foto = $request->foto;
+        $new_foto = time() . $foto->getClientOriginalName();
+
+        $data = blogModel::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'foto' => 'public/uploads/blog/' . $new_foto,
+            'slug' => Str::slug($request->judul)
+        ]);
+
+        $foto->move('public/uploads/blog/', $new_foto);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data blog berhasil ditambah',
+            'Data' => [
+                'judul' => $request->judul,
+                'deskripsi' => $request->deskripsi,
+                'foto' => 'public/uploads/blog/' . $new_foto,
+                'slug' => Str::slug($request->judul)
+            ]
+        ],200);
+    }
+    public function blogEdit(Request $request,$id){
+        $this->validate($request, [
+            'judul' => 'required',
+            'deskripsi' => 'required'
+        ]);
+
+        $data = blogModel::findOrFail($id);
+
+        if($request->has('foto')){
+            $foto = $request->foto;
+            $new_foto = time() . $foto->getClientOriginalName();
+            $foto->move('public/uploads/blog/', $new_foto);
+
+            $data_update = [
+                'judul' => $request->judul,
+                'deskripsi' => $request->deskripsi,
+                'foto' => 'public/uploads/blog/' . $new_foto,
+                'slug' => Str::slug($request->judul)
+            ];
+        } else {
+            $data_update = [
+                'judul' => $request->judul,
+                'deskripsi' => $request->deskripsi,
+                'foto' => 'public/uploads/blog/' . $new_foto,
+                'slug' => Str::slug($request->judul)
+            ];
+        }
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data blog berhasil dirubah',
+            'Data' => [
+                'judul' => $request->judul,
+                'deskripsi' => $request->deskripsi,
+                'foto' => 'public/uploads/blog/' . $new_foto,
+                'slug' => Str::slug($request->judul)
+            ],
+            $data->update($data_update)
+        ],200);
+    }
+
+    public function blogDelete($id){
+        $data = blogModel::findOrFail($id);
+        $data->delete();
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data blog berhasil dihapus'], 200);
+    }
+    
+}
