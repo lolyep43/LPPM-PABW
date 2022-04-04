@@ -17,32 +17,89 @@ Request:
   - Method : GET
   - Endpoint : /api/lihat-portofolio
   - Header : 
-  - Body :
+  
+          Content-Type: application/json
+          
+  - Query Params :
+  
+          size : number,
+          page : number
+            
   - Respone:
     
-      
         {
-            "id" : "bigint, primary, auto-increment",
-            "jenis" : "string",
-            "judul" : "string",
-            "probblem" : "long",
-            "solusi" : "text",
-            "fitur" : "text",
-            "metode" : "string",
-            "tahun" : "string",
-            "foto" : "string",
-            "created_at" : "timestamp",
-            "updated_at" : "timestamp",
-            "slug"  : "string"
+            "code" : "number",
+            "status" : "string",
+            "data" : [
+              {
+                "id" : "bigint, primary, auto-increment",
+                "jenis" : "string",
+                "judul" : "string",
+                "probblem" : "long",
+                "solusi" : "text",
+                "fitur" : "text",
+                "metode" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+                "slug"  : "string"
+              },
+              {
+                "id" : "bigint, primary, auto-increment",
+                "jenis" : "string",
+                "judul" : "string",
+                "probblem" : "long",
+                "solusi" : "text",
+                "fitur" : "text",
+                "metode" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+                "slug"  : "string"
+              }
             
-
         }
-
+# Mengambil data Portofolio
+Request:
+  - Method : GET
+  - Endpoint : /api/lihat-portofolio
+  - Header : 
+  
+          Content-Type: application/json
+  - Respone :
+  
+         {
+            "code" : "number",
+            "status" : "string",
+            
+             {
+                "id" : "bigint, primary, auto-increment",
+                "jenis" : "string",
+                "judul" : "string",
+                "probblem" : "long",
+                "solusi" : "text",
+                "fitur" : "text",
+                "metode" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+                "slug"  : "string"
+             }
+         
+         }
+          
 # Menambah data Portofolio
 Request:
   - Method : POST
   - Endpoint : /api/tambah-portofolio
   - Header :
+  
+          Content-Type: application/json
+          Accept: application/json
+          
   - Body :
   
         {
@@ -84,6 +141,10 @@ Request:
   - Method : PUT
   - Endpoint : /api/ubah-portofolio/{id}
   - Header :
+    
+          Content-Type: application/json
+          Accept: application/json
+          
   - Body :
   
         {
@@ -126,6 +187,9 @@ Request:
   - Method : DELETE
   - Endpoint : /api/hapus-portofolio/{id}
   - Header :
+    
+          Content-Type: application/json
+          
   - Body :
   
         {
