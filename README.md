@@ -349,11 +349,10 @@ Request:
    - Respone:
    
         {
+        
             code : "number"
             status : "string"
-            data: 
-            
-                  {
+            data: {
                     "id" : "bigint, primary, auto-increment",
                     "level" : "string",
                     "jabatan" : "string",
@@ -365,7 +364,6 @@ Request:
                     "foto" : "string",
                     "created_at" : "timestamp",
                     "updated_at" : "timestamp"
-                    
                   }
         }
 
