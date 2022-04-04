@@ -162,26 +162,27 @@ Request:
             "updated_at" : "timestamp",
             "slug"  : "string"
         }
+        
    - Respone:
    
-    {
-        code : "number"
-        status : "string"
-        data: {
-                "id" : "bigint, primary, auto-increment",
-                "jenis" : "string",
-                "judul" : "string",
-                "problem" : "string",
-                "solusi" : "string",
-                "fitur" : "text",
-                "metode" : "string",
-                "tahun" : "string",
-                "foto" : "string",
-                "created_at" : "timestamp",
-                "updated_at" : "timestamp",
-                "slug"  : "string"
-            }
-    }
+       {
+                code : "number"
+                status : "string"
+                data : {
+                         "id" : "bigint, primary, auto-increment",
+                         "jenis" : "string",
+                         "judul" : "string",
+                         "problem" : "string",
+                         "solusi" : "string",
+                         "fitur" : "text",
+                         "metode" : "string",
+                         "tahun" : "string",
+                         "foto" : "string",
+                         "created_at" : "timestamp",
+                         "updated_at" : "timestamp",
+                         "slug"  : "string"
+                      }
+        }
 
 # Menghapus data Portofolio
 Request:
