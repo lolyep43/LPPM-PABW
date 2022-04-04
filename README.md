@@ -15,7 +15,7 @@
 # Mengambil Seluruh Portofolio
 Request:
   - Method : GET
-  - Endpoint : /api/lihat-portofolio
+  - Endpoint : /api/lihat-portofolios
   - Header : 
   
           Content-Type: application/json
@@ -61,10 +61,11 @@ Request:
               }
             
         }
+        
 # Mengambil data Portofolio
 Request:
   - Method : GET
-  - Endpoint : /api/lihat-portofolio
+  - Endpoint : /api/lihat-portofolio/{id}
   - Header : 
   
           Content-Type: application/json
@@ -115,25 +116,26 @@ Request:
             "updated_at" : "timestamp",
             "slug"  : "string"
         }
+        
    - Respone:
    
-    {
-        code : "number"
-        status : "string"
-        data : {
-                "id" : "bigint, primary, auto-increment",
-                "jenis" : "string",
-                "judul" : "string",
-                "probblem" : "long",
-                "solusi" : "text",
-                "fitur" : "text",
-                "metode" : "string",
-                "tahun" : "string",
-                "foto" : "string",
-                "created_at" : "timestamp",
-                "updated_at" : "timestamp",
-                "slug"  : "string"
-              }
+        {
+            code : "number"
+            status : "string"
+            data : {
+                    "id" : "bigint, primary, auto-increment",
+                    "jenis" : "string",
+                    "judul" : "string",
+                    "probblem" : "long",
+                    "solusi" : "text",
+                    "fitur" : "text",
+                    "metode" : "string",
+                    "tahun" : "string",
+                    "foto" : "string",
+                    "created_at" : "timestamp",
+                    "updated_at" : "timestamp",
+                    "slug"  : "string"
+         }
     }
 
 # Mengubah data Portofolio
@@ -190,11 +192,6 @@ Request:
     
           Content-Type: application/json
           
-  - Body :
-  
-        {
-            "id" : "bigint, primary",
-        }
    - Respone:
    
     {
@@ -202,4 +199,186 @@ Request:
         status : "string",
         pesan : "string"
     }
+    
  
+ 
+# Mengambil Seluruh Anggota
+Request:
+  - Method : GET
+  - Endpoint : /api/lihat-anggotas
+  - Header : 
+  
+          Content-Type: application/json
+          
+  - Query Params :
+  
+          size : number,
+          page : number
+            
+  - Respone:
+    
+        {
+            "code" : "number",
+            "status" : "string",
+            "data" : [
+              {
+                "id" : "bigint, primary, auto-increment",
+                "level" : "string",
+                "jabatan" : "string",
+                "nama" : "long",
+                "foto" : "text",
+                "created_at" : "text",
+                "deleted_at" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+              },
+              {
+                "id" : "bigint, primary, auto-increment",
+                "level" : "string",
+                "jabatan" : "string",
+                "nama" : "long",
+                "foto" : "text",
+                "created_at" : "text",
+                "deleted_at" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+              }
+            
+        }
+# Mengambil data Anggota
+Request:
+  - Method : GET
+  - Endpoint : /api/lihat-anggota/{id}
+  - Header : 
+  
+          Content-Type: application/json
+  - Respone :
+  
+         {
+            "code" : "number",
+            "status" : "string",
+            
+             {
+                "id" : "bigint, primary, auto-increment",
+                "level" : "string",
+                "jabatan" : "string",
+                "nama" : "long",
+                "foto" : "text",
+                "created_at" : "text",
+                "deleted_at" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+             }
+         
+         }
+          
+# Menambah data Anggota
+Request:
+  - Method : POST
+  - Endpoint : /api/tambah-anggota
+  - Header :
+  
+          Content-Type: application/json
+          Accept: application/json
+          
+  - Body :
+  
+        {
+          "level" : "string",
+          "jabatan" : "string",
+          "nama" : "long",
+          "foto" : "text",
+          "created_at" : "text",
+          "deleted_at" : "string",
+          "tahun" : "string",
+          "foto" : "string",
+          "created_at" : "timestamp",
+          "updated_at" : "timestamp"
+        }
+        
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data : {
+                "id" : "bigint, primary, auto-increment",
+                "level" : "string",
+                "jabatan" : "string",
+                "nama" : "long",
+                "foto" : "text",
+                "created_at" : "text",
+                "deleted_at" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+              }
+    }
+
+# Mengubah data Anggota
+Request:
+  - Method : PUT
+  - Endpoint : /api/ubah-anggota/{id}
+  - Header :
+    
+          Content-Type: application/json
+          Accept: application/json
+          
+  - Body :
+  
+        {
+            "level" : "string",
+            "jabatan" : "string",
+            "nama" : "long",
+            "foto" : "text",
+            "created_at" : "text",
+            "deleted_at" : "string",
+            "tahun" : "string",
+            "foto" : "string",
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
+        }
+        
+   - Respone:
+   
+        {
+            code : "number"
+            status : "string"
+            data: {
+                    "id" : "bigint, primary, auto-increment",
+                    "level" : "string",
+                    "jabatan" : "string",
+                    "nama" : "long",
+                    "foto" : "text",
+                    "created_at" : "text",
+                    "deleted_at" : "string",
+                    "tahun" : "string",
+                    "foto" : "string",
+                    "created_at" : "timestamp",
+                    "updated_at" : "timestamp"
+                  }
+        }
+
+# Menghapus data Portofolio
+Request:
+  - Method : DELETE
+  - Endpoint : /api/hapus-portofolio/{id}
+  - Header :
+    
+          Content-Type: application/json
+          
+   - Respone:
+   
+    {
+        code : "number",
+        status : "string",
+        pesan : "string"
+    }
+
