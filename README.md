@@ -351,8 +351,9 @@ Request:
         {
             code : "number"
             status : "string"
-            data: {
+            data: 
             
+                  {
                     "id" : "bigint, primary, auto-increment",
                     "level" : "string",
                     "jabatan" : "string",
