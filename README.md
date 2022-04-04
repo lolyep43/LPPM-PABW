@@ -783,7 +783,7 @@ Request:
               }
     }
     
-# Menghapus data QNA
+# Menghapus data user
 Request:
   - Method : DELETE
   - Endpoint : /api/hapus-user/{id}
