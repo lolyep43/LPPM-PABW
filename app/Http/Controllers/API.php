@@ -16,8 +16,25 @@ use Illuminate\Support\Str;
 class API extends Controller
 {
     public function PortofolioIndex(){
-        $data = blogModel::all();
-        return json_encode($data);
+        $data = PortofolioModel::all();
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
+    }
+
+    public function PortofolioData($id){
+        $data = PortofolioModel::find($id);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
     }
 
     public function PortofolioStore(Request $request){
@@ -79,7 +96,7 @@ class API extends Controller
         if($request->has('foto')){
             $foto = $request->foto;
             $new_foto = time() . $foto->getClientOriginalName();
-            $foto->move('public/uploads/blog/', $new_foto);
+            $foto->move('public/uploads/portofolio/', $new_foto);
 
             $data_update = [
                 'jenis' => $request->jenis,
@@ -133,8 +150,25 @@ class API extends Controller
 
     public function AnggotaIndex(){
         $data = anggotaModel::all();
-        return json_encode($data);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
     }
+
+    public function AnggotaData($id){
+        $data = anggotaModel::find($id);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
+    } 
 
     public function AnggotaStore(Request $request){
 
@@ -225,8 +259,25 @@ class API extends Controller
     public function blogIndex()
     {
         $data = blogModel::all();
-        return json_encode($data);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
     }
+
+    public function blogData($id){
+        $data = blogModel::find($id);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
+    } 
 
     public function blogStore(Request $request){
         $this->validate($request, [
@@ -310,7 +361,24 @@ class API extends Controller
 
     public function UserIndex(){
         $data = User::all();
-        return json_encode($data);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
+    }
+
+    public function UserData($id){
+        $data = User::find($id);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
     }
 
     public function UserStore(Request $request){
