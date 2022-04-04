@@ -348,24 +348,24 @@ Request:
         
    - Respone:
    
-       {
-            code : "number"
-            status : "string"
-            data : {
-                    "id" : "bigint, primary, auto-increment",
-                    "level" : "string",
-                    "jabatan" : "string",
-                    "nama" : "long",
-                    "foto" : "text",
-                    "created_at" : "text",
-                    "deleted_at" : "string",
-                    "tahun" : "string",
-                    "foto" : "string",
-                    "created_at" : "timestamp",
-                    "updated_at" : "timestamp",
-                  }
-        }
-
+    {
+        code : "number"
+        status : "string"
+        data : {
+                "id" : "bigint, primary, auto-increment",
+                "level" : "string",
+                "jabatan" : "string",
+                "nama" : "long",
+                "foto" : "text",
+                "created_at" : "text",
+                "deleted_at" : "string",
+                "tahun" : "string",
+                "foto" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+              }
+    }
+    
 # Menghapus data Portofolio
 Request:
   - Method : DELETE
