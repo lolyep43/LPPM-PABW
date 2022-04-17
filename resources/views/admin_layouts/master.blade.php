@@ -413,6 +413,15 @@
                             </li>
                             <li class="app-sidebar__heading">Menus</li>
                             <li>
+<<<<<<< HEAD
+=======
+                                <a href="{{ route('anggota.index') }}">
+                                    <i class="metismenu-icon pe-7s-user"></i>
+                                    Anggota
+                                </a>
+                            </li>
+                            <li>
+>>>>>>> 39746d2 (MailHog)
                                 <a href="{{ route('portofolio.index') }}">
                                     <i class="metismenu-icon pe-7s-user"></i>
                                     Portofolio

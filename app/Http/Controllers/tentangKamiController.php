@@ -3,14 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Model\tentangKamiModel;
+=======
+use App\Models\tentangKamiModel;
+>>>>>>> 39746d2 (MailHog)
 
 class tentangKamiController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         $deskripsi = anggotaModel::all();
         return view('admin.fokus_riset.index', compact('deskripsi'));
+=======
+        $data = tentangKamiModel::all();
+        return view('admin.tentangKa.index', compact('data'));
+>>>>>>> 39746d2 (MailHog)
     }
 
     public function create()

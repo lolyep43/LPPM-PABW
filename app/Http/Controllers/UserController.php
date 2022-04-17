@@ -12,7 +12,11 @@ class UserController extends Controller
     public function index(){
         $User = User::latest()->paginate(10);
         return view('admin.user.index', compact('User'));
+<<<<<<< HEAD
     }
+=======
+    } 
+>>>>>>> 39746d2 (MailHog)
     public function create(){
         return view('admin.user.create');
     }
