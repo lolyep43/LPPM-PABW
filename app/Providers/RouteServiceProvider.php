@@ -21,11 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-<<<<<<< HEAD
     public const HOME = '/home';
-=======
-    public const HOME = '/dashboard';
->>>>>>> 39746d2 (MailHog)
 
     /**
      * Define your route model bindings, pattern filters, etc.
