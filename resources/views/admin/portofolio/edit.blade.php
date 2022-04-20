@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Edit Deskripsi Fokus Riset - LPPM ITK')
+@section('title', 'Edit Portofolio - PETAL')
 
 @section('content')
 
@@ -17,7 +17,7 @@
 </div>
 @endif
 
-<h1>Edit Deskripsi</h1><br>
+<h1>Edit Portofolio</h1><br>
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">

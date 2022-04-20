@@ -17,7 +17,7 @@
 </div>
 @endif
 
-<h1>Tambah Portofolio</h1><br>
+<h1>Tambah FAQ</h1><br>
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">

@@ -2,7 +2,7 @@
 @section('title', 'Deskripsi Fokus Riset - LPPM ITK')
 @section('content')
 
-<h1>Portofolio</h1><br>
+<h1>Blog</h1><br>
 
 @if(Session::has('success'))
 <div class="alert alert-success" role="alert">

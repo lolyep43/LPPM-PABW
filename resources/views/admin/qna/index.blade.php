@@ -2,7 +2,7 @@
 @section('title', 'Deskripsi Fokus Riset - LPPM ITK')
 @section('content')
 
-<h1>Portofolio</h1><br>
+<h1>FAQ</h1><br>
 
 @if(Session::has('success'))
 <div class="alert alert-success" role="alert">
@@ -22,6 +22,7 @@
                         <tr>
                             <th>#</th>
                             <th>Pertanyaan</th>
+                            {{-- <th>Jawaban</th> --}}
                             <th width="17%">Aksi</th>
                         </tr>
                     </thead>
@@ -30,6 +31,7 @@
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $hasil->pertanyaan}}</td>
+                            {{-- <td>{{ $hasil->jawaban}}</td> --}}
                             <td>
                                 <form action="{{ route('QNA.destroy', $hasil->id) }}" method="POST">
                                     @csrf

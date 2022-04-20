@@ -17,7 +17,7 @@
 </div>
 @endif
 
-<h1>Edit QNA</h1><br>
+<h1>Edit FAQ</h1><br>
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">
@@ -38,24 +38,6 @@
 <script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('konten', {
-        filebrowserUploadMethod: 'form',
-        height: 250,
-		removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
-    });
-
-    CKEDITOR.replace('konten1', {
-        filebrowserUploadMethod: 'form',
-        height: 250,
-		removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
-    });
-
-    CKEDITOR.replace('konten2', {
-        filebrowserUploadMethod: 'form',
-        height: 250,
-		removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
-    });
-
-    CKEDITOR.replace('konten3', {
         filebrowserUploadMethod: 'form',
         height: 250,
 		removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
