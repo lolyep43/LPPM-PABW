@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\blogModel;
@@ -15,6 +17,48 @@ use Illuminate\Support\Str;
 
 class API extends Controller
 {
+    public function login(Request $request){
+
+        if(Auth::attempt($request->only('email', 'password'))){
+            return response()->json(['Pesan:' => 'Selamat anda telah login']);
+        }
+        
+        $user = User::where('email', $request['email'])->firstOrFail();
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json(['Pesan:' => 'Silahkan login kembali'], 200);
+    }
+
+    public function logout(Request $request)
+    {
+        if ($request->user()) { 
+            $request->user()->tokens()->delete();
+        }
+        return response()->json(['message' => 'Anda berhasil logout.'], 200);
+    }
+
+    public function lupa_password(Request $request){
+
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+        return response()->json(['message' => 'Password berhasil dikirim'], 200);
+    }
+
+    public function link_password(Request $request){
+
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user) use ($request) {
+                $user->forceFill([
+                    'password' => Hash::make($request->password),
+                    'remember_token' => Str::random(60),
+                ])->save();
+            }
+        );
+    }
+
+
     public function PortofolioIndex(){
         $data = PortofolioModel::all();
         return response()->json([

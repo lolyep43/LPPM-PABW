@@ -19,6 +19,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+# API Login dan Logout
+Route::post('login', [API::class, 'login']);
+Route::post('logout', [API::class, 'logout']);
+
+# API Lupa password
+Route::post('reset-password', [API::class, 'lupa_password']);
+Route::post('confirm-passowrd', [API::class, 'link_password']);
+
 # API Portofolio 
 Route::get('lihat-portofolios', [API::class, 'PortofolioIndex']);
 Route::get('lihat-portofolio/{id}', [API::class, 'PortofolioData']);
