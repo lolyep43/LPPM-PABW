@@ -23,14 +23,12 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'role' => 'required'
         ]);
 
         $User = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role
         ]);
 
         return redirect()->route('user.index')->with('success', 'User telah ditambahkan');
@@ -47,7 +45,6 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'role' => 'required'
         ]);
 
         $User = User::findOrFail($id);
@@ -56,7 +53,6 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role
         ];
 
         $User->update($updateUser);
