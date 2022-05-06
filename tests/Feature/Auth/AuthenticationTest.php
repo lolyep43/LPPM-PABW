@@ -19,11 +19,10 @@ class AuthenticationTest extends TestCase
 
     public function test_users_can_authenticate_using_the_login_screen()
     {
-        $user = User::factory()->create();
 
         $response = $this->post('/login', [
-            'email' => $user->email,
-            'password' => 'password',
+            'email' => 'admin@lppm.itk.ac.id',
+            'password' => 'ahmad123123',
         ]);
 
         $this->assertAuthenticated();
@@ -32,10 +31,9 @@ class AuthenticationTest extends TestCase
 
     public function test_users_can_not_authenticate_with_invalid_password()
     {
-        $user = User::factory()->create();
 
         $this->post('/login', [
-            'email' => $user->email,
+            'email' => 'admin@lppm.itk.ac.id',
             'password' => 'wrong-password',
         ]);
 

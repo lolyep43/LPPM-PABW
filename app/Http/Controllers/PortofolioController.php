@@ -71,11 +71,7 @@ class PortofolioController extends Controller
         if($request->has('foto')){
             $foto = $request->foto;
             $new_foto = time() . $foto->getClientOriginalName();
-<<<<<<< HEAD
-            $foto->move('public/uploads/blog/', $new_foto);
-=======
             $foto->move('public/uploads/portofolio/', $new_foto);
->>>>>>> 39746d2 (MailHog)
 
             $data_update = [
                 'jenis' => $request->jenis,
