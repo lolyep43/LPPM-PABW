@@ -71,11 +71,11 @@ class FAQTest extends TestCase
 
         $this->assertAuthenticated();
 
-        $response = $this->delete(route('QNA.destroy', 1));
+        $response = $this->delete(route('QNA.destroy', 17));
 
         $response->assertStatus(302);
         
-    }
+    } 
 
 
 }
