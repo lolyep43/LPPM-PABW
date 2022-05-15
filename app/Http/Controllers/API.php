@@ -17,10 +17,6 @@ use Illuminate\Support\Str;
 
 class API extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('api');
-    }
 
     public function link_password(Request $request){
 

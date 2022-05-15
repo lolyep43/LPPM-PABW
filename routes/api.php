@@ -26,12 +26,11 @@ Route::controller(AuthAPI::class)->group(function () {
 // Route::post('logout', [API::class, 'logout']);
 // Route::post('register', [API::class, 'register']);
 // Route::post('refresh', [API::class, 'refresh']);
-    
+# API Lupa password
+Route::post('reset-password', [API::class, 'lupa_password']);
+Route::post('confirm-passowrd', [API::class, 'link_password']);
+
 Route::group(['middleware' => 'auth:api'], function (){
-    
-    # API Lupa password
-    Route::post('reset-password', [API::class, 'lupa_password']);
-    Route::post('confirm-passowrd', [API::class, 'link_password']);
     
     # API Portofolio 
     Route::get('lihat-portofolios', [API::class, 'PortofolioIndex']);
