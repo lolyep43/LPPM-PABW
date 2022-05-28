@@ -888,8 +888,6 @@ Request:
    - Body:
  
         {
-        
           "email" : "string"
-          
         }
     
