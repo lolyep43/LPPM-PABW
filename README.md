@@ -2,13 +2,14 @@
 
 # Module
 1. Login
-2. Beranda
-3. Tentang Kami
-4. Anggota
-5. Testimoni
-6. Blog
-7. FAQ
-8. Logout
+2. Lupa Password
+3. Beranda
+4. Tentang Kami
+5. Anggota
+6. Testimoni
+7. Blog
+8. FAQ
+9. Logout
 
 
 
@@ -141,7 +142,7 @@ Request:
 # Mengubah data Portofolio
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-portofolio/{id}
+  - Endpoint : /api/edit-portofolio/{id}
   - Header :
     
           Content-Type: application/json
@@ -306,7 +307,7 @@ Request:
 # Mengubah data Anggota
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-anggota/{id}
+  - Endpoint : /api/edit-anggota/{id}
   - Header :
     
           Content-Type: application/json
@@ -456,7 +457,7 @@ Request:
 # Mengubah data blog
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-blog/{id}
+  - Endpoint : /api/edit-blog/{id}
   - Header :
     
           Content-Type: application/json
@@ -501,7 +502,7 @@ Request:
         pesan : "string"
     }
 
-# Mengambil Seluruh QNA
+# Mengambil Seluruh FAQ
 Request:
   - Method : GET
   - Endpoint : /api/lihat-qnas
@@ -537,7 +538,7 @@ Request:
             
         }
         
-# Mengambil data QNA
+# Mengambil data FAQ
 Request:
   - Method : GET
   - Endpoint : /api/lihat-qna/{id}
@@ -561,7 +562,7 @@ Request:
          
          }
           
-# Menambah data QNA
+# Menambah data FAQ
 Request:
   - Method : POST
   - Endpoint : /api/tambah-qna
@@ -593,10 +594,10 @@ Request:
               }
     }
 
-# Mengubah data blog
+# Mengubah data FAQ
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-qna/{id}
+  - Endpoint : /api/edit-qna/{id}
   - Header :
     
           Content-Type: application/json
@@ -623,7 +624,7 @@ Request:
               }
     }
     
-# Menghapus data QNA
+# Menghapus data FAQ
 Request:
   - Method : DELETE
   - Endpoint : /api/hapus-qna/{id}
@@ -750,7 +751,7 @@ Request:
 # Mengubah data user
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-user/{id}
+  - Endpoint : /api/edit-user/{id}
   - Header :
     
           Content-Type: application/json
@@ -798,3 +799,80 @@ Request:
         status : "string",
         pesan : "string"
     }
+    
+# Mengambil Seluruh Contact Us
+Request:
+  - Method : GET
+  - Endpoint : /api/lihat-contact
+  - Header : 
+  
+          Content-Type: application/json
+          
+  - Query Params :
+  
+          size : number,
+          page : number
+            
+  - Respone:
+    
+        {
+            "code" : "number",
+            "status" : "string",
+            "data" : [
+              {
+                "id" : "bigint, primary, auto-increment",
+                "nomor" : "string",
+                "alamat" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+              }
+            
+        }
+# Mengubah data Contact Us
+Request:
+  - Method : PUT
+  - Endpoint : /api/edit-contact/{id}
+  - Header :
+    
+          Content-Type: application/json
+          Accept: application/json
+          
+  - Body :
+  
+        {
+          "pertanyaan" : "string",
+          "jawaban" : "string",
+        }
+        
+   - Respone:
+   
+    {
+        code : "number"
+        status : "string"
+        data : {
+                "id" : "bigint, primary, auto-increment",
+                "nomor" : "string",
+                "jalan" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp",
+              }
+    }
+        
+# Logout
+Request:
+  - Method : POST
+  - Endpoint : /api/logout
+  - Authorization : Bearer Token
+  - Header :
+    
+          Content-Type: application/json
+          Accept: application/json
+        
+   - Respone:
+   
+    {
+        status : "string",
+        massage : "string"
+       
+    }
+    
