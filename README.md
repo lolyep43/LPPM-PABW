@@ -3,7 +3,6 @@
 # Module
 1. Login
 2. Lupa Password
-3. Beranda
 4. Tentang Kami
 5. Anggota
 6. Testimoni
@@ -875,4 +874,19 @@ Request:
         massage : "string"
        
     }
+    
+# Lupa Password
+Request:
+  - Method : POST
+  - Endpoint : /api/lupa-passowrd
+  - Header :
+    
+          Content-Type: application/json
+          Accept: application/json
+        
+   - Body:
+   -
+        {
+          "email" : "string"
+        }
     
