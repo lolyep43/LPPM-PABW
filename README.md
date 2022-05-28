@@ -8,7 +8,8 @@
 6. Testimoni
 7. Blog
 8. FAQ
-9. Logout
+9. Contact Us
+10. Logout
 
 
 
