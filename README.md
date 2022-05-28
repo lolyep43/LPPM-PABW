@@ -885,8 +885,10 @@ Request:
           Accept: application/json
         
    - Body:
-   -
+ 
         {
+        
           "email" : "string"
+          
         }
     
