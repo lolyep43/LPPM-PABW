@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'User - LPPM ITK')
+@section('title', 'User - PETAL')
 @section('content')
 
 <h1>User</h1><br>
@@ -15,7 +15,7 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <a href="{{ route('user.create')}}" class="btn btn-success btn-sm">Tambah User</a>
+                    <a href="{{ route('user.create')}}" class="btn btn-sm" style="background-color:#2651be; color: white;">Tambah User</a>
                 </h5>
                 <table class="mb-0 table table-striped">
                     <thead>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\anggotaModel;
+use Illuminate\Support\Str;
 
 class anggotaController extends Controller
 {
@@ -21,7 +22,6 @@ class anggotaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'level' => 'required',
             'jabatan' => 'required',
             'nama' => 'required'
 
@@ -31,7 +31,6 @@ class anggotaController extends Controller
         $new_foto = time() . $foto->getClientOriginalName();
 
         $data = anggotaModel::create([
-            'level' => $request->level,
             'jabatan' => $request->jabatan,
             'nama' => $request->nama,
             'foto' => 'public/uploads/anggota/' . $new_foto,
@@ -51,7 +50,6 @@ class anggotaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'level' => 'required',
             'jabatan' => 'required',
             'nama' => 'required'
 
@@ -65,7 +63,6 @@ class anggotaController extends Controller
             $foto->move('public/uploads/anggota/', $new_foto);
 
             $data_update = [
-                'level' => $request->level,
                 'jabatan' => $request->jabatan,
                 'nama' => $request->nama,
                 'foto' => 'public/uploads/anggota/' . $new_foto,
@@ -73,7 +70,6 @@ class anggotaController extends Controller
             ];
         } else {
             $data_update = [
-                'level' => $request->level,
                 'jabatan' => $request->jabatan,
                 'nama' => $request->nama,
                 'slug' => Str::slug($request->nama)

@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Tambah Anggota - Petal')
+@section('title', 'Tambah Anggota - PETAL')
 
 @section('content')
 
@@ -39,14 +39,6 @@
                                     <option value="Backend Developer">Backend Developer</option>
                                     <option value="UI/UX Designer">UI/UX Designer</option>
                                     <option value="DevOps Engineer">DevOps Engineer</option>
-                                </select>
-                            </div>
-                            <div class="position-relative form-group"><label>Level</label>
-                                <select name="level" class="form-control">
-                                    <option value="">Pilih Jabatan</option>
-                                    <option value="Excecutive">Excecutive</option>
-                                    <option value="Manajemen">Manajemen</option>
-                                    <option value="Developer">Developer</option>
                                 </select>
                             </div>
                             <div class="position-relative form-group"><label>Foto</label><input name="foto" type="file" class="form-control-file">

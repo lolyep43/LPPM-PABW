@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Edit Deskripsi Fokus Riset - LPPM ITK')
+@section('title', 'Tambah Blog - PETAL')
 
 @section('content')
 

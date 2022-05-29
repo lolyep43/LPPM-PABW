@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('QNA', 'qnaController');
     Route::resource('blog', 'blogController');
     Route::resource('anggota', 'anggotaController');
+    Route::resource('contact', 'ContactController');
     
 });
 require __DIR__.'/auth.php';

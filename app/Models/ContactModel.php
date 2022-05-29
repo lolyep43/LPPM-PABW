@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class anggotaModel extends Model
+class ContactModel extends Model
 {
-    protected $table = 'anggota';
-    protected $fillable = ['jabatan','nama','foto'];
+    protected $table = 'kontak';
+    protected $fillable = ['nomor','alamat'];
     protected $guarded = [];
 }

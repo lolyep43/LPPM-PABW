@@ -436,6 +436,12 @@
                                     QNA
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('contact.edit', 1) }}">
+                                    <i class="metismenu-icon pe-7s-user"></i>
+                                    Contact Us
+                                </a>
+                            </li>
                             <li class="app-sidebar__heading">User</li>
                             <li>
                                 <a href="{{ route('user.index') }}">

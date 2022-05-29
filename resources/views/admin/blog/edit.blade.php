@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Edit Deskripsi Fokus Riset - LPPM ITK')
+@section('title', 'Edit Blog - PETAL')
 
 @section('content')
 
@@ -25,7 +25,7 @@
                 <div class="col-md-12">
                     <form class="" action="{{ route('blog.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PATCH ')
+                        @method('PATCH')
                         <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $data->judul}}"></div>
                         <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten" value="{{ $data->deskripsi }}"></textarea></div>
                         <div class="position-relative form-group"><label>Foto</label><br>

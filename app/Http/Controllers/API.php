@@ -12,6 +12,7 @@ use App\Models\anggotaModel;
 use App\Models\TentangKamiModel;
 use App\Models\PortofolioModel;
 use App\Models\User;
+use App\Models\ContactModel;
 
 use Illuminate\Support\Str;
 
@@ -20,15 +21,18 @@ class API extends Controller
 
     public function link_password(Request $request){
 
-        $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
-            function ($user) use ($request) {
-                $user->forceFill([
-                    'password' => Hash::make($request->password),
-                    'remember_token' => Str::random(60),
-                ])->save();
-            }
+        $request->validate([
+            'email' => ['required', 'email'],
+        ]);
+
+        $status = Password::sendResetLink(
+            $request->only('email')
         );
+
+        return $status == Password::RESET_LINK_SENT
+                    ? back()->with('status', __($status))
+                    : back()->withInput($request->only('email'))
+                            ->withErrors(['email' => __($status)]);
     }
 
 
@@ -86,6 +90,7 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data berhasil ditambah',
             'Data' => [
+                'id' => $data->id,
                 'jenis' => $request->jenis,
                 'judul' => $request->judul,
                 'problem' => $request->problem,
@@ -190,7 +195,6 @@ class API extends Controller
     public function AnggotaStore(Request $request){
 
         $this->validate($request, [
-            'level' => 'required',
             'jabatan' => 'required',
             'nama' => 'required',
 
@@ -212,7 +216,7 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data berhasil ditambah',
             'Data' => [
-                'level' => $request->level,
+                'id' => $data->id,
                 'jabatan' => $request->jabatan,
                 'nama' => $request->nama,
                 'foto' => 'public/uploads/anggota' . $new_foto,
@@ -235,14 +239,14 @@ class API extends Controller
             $foto->move('public/uploads/anggota/', $new_foto);
 
             $data_update = [
-                'level' => $request->level,
+
                 'jabatan' => $request->jabatan,
                 'nama' => $request->nama,
                 'foto' => 'public/uploads/anggota' . $new_foto,
             ];
         } else {
             $data_update = [
-                'level' => $request->level,
+
                 'jabatan' => $request->jabatan,
                 'nama' => $request->nama,
                 'foto' => 'public/uploads/anggota' . $new_foto,
@@ -255,7 +259,7 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data berhasil dirubah',
             'Data' => [
-                'level' => $request->level,
+                'id' => $data->id,
                 'jabatan' => $request->jabatan,
                 'nama' => $request->nama,
                 'foto' => 'public/uploads/anggota' . $new_foto,
@@ -319,6 +323,7 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data blog berhasil ditambah',
             'Data' => [
+                'id' => $data->id,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
                 'foto' => 'public/uploads/blog/' . $new_foto,
@@ -358,6 +363,7 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data blog berhasil dirubah',
             'Data' => [
+                'id' => $data->id,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
                 'foto' => 'public/uploads/blog/' . $new_foto,
@@ -404,7 +410,6 @@ class API extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'role' => 'required',
 
         ]);
 
@@ -412,7 +417,6 @@ class API extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role
         ]);
 
         return response()->json([
@@ -420,10 +424,10 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data berhasil ditambah',
             'Data' => [
+                'id' => $data->id,
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role' => $request->role
             ]
         ],200);
     }
@@ -461,6 +465,7 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data berhasil dirubah',
             'Data' => [
+                'id' => $data->id,
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
@@ -478,4 +483,131 @@ class API extends Controller
             'Status' => 'Berhasil',
             'Pesan' => 'Data berhasil dihapus'], 200);
     }
+
+    public function qnaIndex(){
+        $data = qnaModel::all();
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
+    }
+
+    public function qnaData($id){
+        $data = qnaModel::find($id);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
+    }
+
+    public function qnaStore(Request $request){
+
+        $this->validate($request, [
+            'pertanyaan' => 'required',
+            'jawaban' => 'required'
+
+        ]);
+
+        $data = qnaModel::create([
+            'pertanyaan' => $request->pertanyaan,
+            'jawaban' => $request->jawaban,
+        ]);
+
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil ditambah',
+            'Data' => [
+                'id' => $data->id,
+                'pertanyaan' => $request->pertanyaan,
+                'jawaban' => $request->jawaban
+            ]
+        ],200);
+    }
+
+    public function qnaEdit(Request $request, $id){
+        $this->validate($request, [
+            'pertanyaan' => 'required',
+            'jawaban' => 'required'
+        ]);
+
+        $data = qnaModel::findOrFail($id);
+
+        if($request){
+
+            $data_update = [
+                'pertanyaan' => $request->pertanyaan,
+                'jawaban' => $request->jawaban
+            ];
+        }
+
+        // $data->update($data_update);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil dirubah',
+            'Data' => [
+                'id' => $data->id,
+                'pertanyaan' => $request->pertanyaan,
+                'jawaban' => $request->jawaban
+            ],
+            $data->update($data_update)
+        ],200);
+    }
+
+    public function qnaDelete($id){
+        $data = qnaModel::findOrFail($id);
+        $data->delete();
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil dihapus'], 200);
+    }
+
+    public function ContactIndex(){
+        $data = ContactModel::all();
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Data' => [
+                $data
+            ]
+        ],200);
+    }
+
+    public function ContactEdit(Request $request, $id){
+        $this->validate($request, [
+            'nomor' => 'required',
+            'alamat' => 'required'
+        ]);
+
+        $data = ContactModel::findOrFail($id);
+
+        if($request){
+
+            $data_update = [
+                'nomor' => $request->nomor,
+                'alamat' => $request->alamat
+            ];
+        }
+
+        // $data->update($data_update);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Berhasil',
+            'Pesan' => 'Data berhasil dirubah',
+            'Data' => [
+                'pertanyaan' => $request->nomor,
+                'alamat' => $request->alamat
+            ],
+            $data->update($data_update)
+        ],200);
+    }
+
 }

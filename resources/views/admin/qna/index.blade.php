@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Deskripsi Fokus Riset - LPPM ITK')
+@section('title', 'FAQ - PETAL')
 @section('content')
 
 <h1>FAQ</h1><br>
@@ -15,7 +15,7 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <a href="{{ route('QNA.create')}}" class="btn btn-success btn-sm">Tambah QNA</a>
+                    <a href="{{ route('QNA.create')}}" class="btn btn-sm" style="background-color:#2651be; color: white;">Tambah QNA</a>
                 </h5>
                 <table class="mb-0 table table-striped">
                     <thead>

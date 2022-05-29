@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Edit User - LPPM ITK')
+@section('title', 'Edit User - PETAL')
 
 @section('content')
 

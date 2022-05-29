@@ -15,7 +15,7 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <a href="{{ route('anggota.create')}}" class="btn btn-success btn-sm">Tambah Anggota</a>
+                    <a href="{{ route('anggota.create')}}" class="btn btn-sm" style="background-color:#2651be; color: white;">Tambah Anggota</a>
                 </h5>
                 <table class="mb-0 table table-striped">
                     <thead>

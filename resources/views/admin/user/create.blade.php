@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Tambah User - LPPM ITK')
+@section('title', 'Tambah User - PETAL')
 
 @section('content')
 

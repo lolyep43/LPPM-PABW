@@ -22,13 +22,9 @@ Route::controller(AuthAPI::class)->group(function () {
     Route::post('refresh', 'refresh');
 
 });
-// Route::post('login', [API::class, 'login']);
-// Route::post('logout', [API::class, 'logout']);
-// Route::post('register', [API::class, 'register']);
-// Route::post('refresh', [API::class, 'refresh']);
 # API Lupa password
 Route::post('reset-password', [API::class, 'lupa_password']);
-Route::post('confirm-passowrd', [API::class, 'link_password']);
+
 
 Route::group(['middleware' => 'auth:api'], function (){
     
@@ -59,4 +55,15 @@ Route::group(['middleware' => 'auth:api'], function (){
     Route::post('tambah-user', [API::class, 'UserStore']);
     Route::put('edit-user/{id}',  [API::class, 'UserEdit']);
     Route::delete('hapus-user/{id}',  [API::class, 'UserDelete']);
+
+    # API FAQ
+    Route::get('lihat-faqs', [API::class, 'qnaIndex']);
+    Route::get('lihat-faq/{id}', [API::class, 'qnaData']);
+    Route::post('tambah-faq', [API::class, 'qnaStore']);
+    Route::put('edit-faq/{id}',  [API::class, 'qnaEdit']);
+    Route::delete('hapus-faq/{id}',  [API::class, 'qnaDelete']);
+
+    #API Contact Us
+    Route::get('lihat-contact', [API::class, 'ContactIndex']);
+    Route::put('edit-contact/{id}', [API::class, 'ContactEdit']);
 });
