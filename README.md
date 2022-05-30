@@ -20,6 +20,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
           
   - Query Params :
   
@@ -70,6 +71,8 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
+          
   - Respone :
   
          {
@@ -100,6 +103,7 @@ Request:
   - Header :
   
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -146,6 +150,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -192,6 +197,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           
    - Respone:
    
@@ -208,6 +214,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
           
   - Query Params :
   
@@ -250,6 +257,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
   - Respone :
   
          {
@@ -275,7 +283,9 @@ Request:
   - Header :
   
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
+          
           
   - Body :
   
@@ -311,6 +321,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -351,6 +362,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           
    - Respone:
    
@@ -429,6 +441,7 @@ Request:
   - Header :
   
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -461,6 +474,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -493,6 +507,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           
    - Respone:
    
@@ -509,6 +524,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
           
   - Query Params :
   
@@ -545,6 +561,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
           
   - Respone :
   
@@ -569,6 +586,7 @@ Request:
   - Header :
   
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -601,6 +619,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -631,6 +650,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           
    - Respone:
    
@@ -647,6 +667,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
           
   - Query Params :
   
@@ -691,6 +712,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
           
   - Respone :
   
@@ -719,6 +741,7 @@ Request:
   - Header :
   
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -755,6 +778,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -791,6 +815,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           
    - Respone:
    
@@ -807,6 +832,7 @@ Request:
   - Header : 
   
           Content-Type: application/json
+          Authorization: JWT
           
   - Query Params :
   
@@ -835,6 +861,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
           
   - Body :
@@ -866,6 +893,7 @@ Request:
   - Header :
     
           Content-Type: application/json
+          Authorization: JWT
           Accept: application/json
         
    - Respone:
@@ -886,8 +914,16 @@ Request:
           Accept: application/json
         
    - Body:
- 
+   
         {
           "email" : "string",
         }
+        
+   - Response
+        
+        {
+          status : "string",
+          massage : "string"
+ 
+       
     
