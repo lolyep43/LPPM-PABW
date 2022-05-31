@@ -29,10 +29,9 @@ class API extends Controller
             $request->only('email')
         );
 
-        return $status == Password::RESET_LINK_SENT
-                    ? back()->with('status', __($status))
-                    : back()->withInput($request->only('email'))
-                            ->withErrors(['email' => __($status)]);
+        return response()->json([
+            'Number' => '200',
+            'Status' => 'Silahkan check email untuk melakukan reset password'],200);
     }
 
 
@@ -226,7 +225,6 @@ class API extends Controller
 
     public function anggotaEdit(Request $request, $id){
         $this->validate($request, [
-            'level' => 'required',
             'jabatan' => 'required',
             'nama' => 'required',
         ]);

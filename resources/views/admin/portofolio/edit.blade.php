@@ -34,10 +34,10 @@
                             </select>
                         </div>
                         <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $data->judul}}"></div>
-                        <div class="position-relative form-group"><label>Problem</label><textarea name="problem"  class="form-control" id="konten" value="{{ $data->problem }}"></textarea></div>
-                        <div class="position-relative form-group"><label>Solusi</label><textarea name="solusi"  class="form-control" id="konten1" value="{{ $data->solusi }}"></textarea></div>
-                        <div class="position-relative form-group"><label>Metode</label><textarea name="metode"  class="form-control" id="konten2" value="{{ $data->metode }}"></textarea></div>
-                        <div class="position-relative form-group"><label>Fitur</label><textarea name="fitur"  class="form-control" id="konten3" value="{{ $data->fitur }}"></textarea></div>
+                        <div class="position-relative form-group"><label>Problem</label><textarea name="problem"  class="form-control" id="konten">{{ $data->problem }}</textarea></div>
+                        <div class="position-relative form-group"><label>Solusi</label><textarea name="solusi"  class="form-control" id="konten1">{{ $data->solusi }}</textarea></div>
+                        <div class="position-relative form-group"><label>Metode</label><textarea name="metode"  class="form-control" id="konten2">{{ $data->metode }}</textarea></div>
+                        <div class="position-relative form-group"><label>Fitur</label><textarea name="fitur"  class="form-control" id="konten3">{{ $data->fitur }}</textarea></div>
                         <div class="position-relative form-group"><label>Foto</label><br>
                             <img src="{{ asset($data->foto) }}" class="img-fluid" style="width:80%" target="_blank"><br><br>
                             <input name="foto" type="file" class="form-control-file">

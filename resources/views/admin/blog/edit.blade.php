@@ -27,7 +27,7 @@
                         @csrf
                         @method('PATCH')
                         <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $data->judul}}"></div>
-                        <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten" value="{{ $data->deskripsi }}"></textarea></div>
+                        <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten"> {{ $data->deskripsi }}</textarea></div>
                         <div class="position-relative form-group"><label>Foto</label><br>
                             <img src="{{ asset($data->foto) }}" class="img-fluid" style="width:80%" target="_blank"><br><br>
                             <input name="foto" type="file" class="form-control-file">

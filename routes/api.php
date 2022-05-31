@@ -23,7 +23,7 @@ Route::controller(AuthAPI::class)->group(function () {
 
 });
 # API Lupa password
-Route::post('reset-password', [API::class, 'lupa_password']);
+Route::post('reset-password', [API::class, 'link_password']);
 
 
 Route::group(['middleware' => 'auth:api'], function (){

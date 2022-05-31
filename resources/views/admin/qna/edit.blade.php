@@ -27,7 +27,7 @@
                         @csrf
                         @method('PATCH ')
                         <div class="position-relative form-group"><label>Pertanyaan</label><input name="pertanyaan" type="text" class="form-control" value="{{$data->pertanyaan}}"></div>
-                        <div class="position-relative form-group"><label>Jawaban</label><textarea name="jawaban" class="form-control" id="konten" value="{{$data->jawaban}}"></textarea></div>
+                        <div class="position-relative form-group"><label>Jawaban</label><textarea name="jawaban" class="form-control" id="konten"> {{$data->jawaban}}</textarea></div>
                         <button class="mt-1 btn btn-primary" style="float:right">Publish</button>
                     </form>
                 </div>
