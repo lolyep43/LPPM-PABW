@@ -101,7 +101,7 @@
     padding: 2.5rem 0;
     color: #999;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: var(--yellow);
     border-top: .05rem solid #e5e5e5;
 }
 
@@ -256,7 +256,7 @@
 }
 
 .blog-footer {
-    background: #fff;
+    background: var(--yellow);
 }
 
 /*------------------------
@@ -762,7 +762,8 @@ header {
 
 
 .center-navigation {
-    padding: 14px 0px;
+    padding: 0px 0px;
+
     background: var(--yellow);
 }
 
