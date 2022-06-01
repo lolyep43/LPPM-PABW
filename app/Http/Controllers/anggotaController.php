@@ -10,7 +10,7 @@ class anggotaController extends Controller
 {
     public function index()
     {
-        $data = anggotaModel::all();
+        $data = anggotaModel::latest()->paginate(10);
         return view('admin.anggota.index', compact('data'));
     }
 

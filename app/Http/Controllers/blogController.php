@@ -10,7 +10,7 @@ class blogController extends Controller
 {
     public function index()
     {
-        $data = blogModel::all();
+        $data = blogModel::latest()->paginate(10);
         return view('admin.blog.index', compact('data'));
     }
 

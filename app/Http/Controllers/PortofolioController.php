@@ -10,7 +10,7 @@ class PortofolioController extends Controller
 {
     public function index()
     {
-        $data = PortofolioModel::all();
+        $data = PortofolioModel::latest()->paginate(10);
         return view('admin.portofolio.index', compact('data'));
     }
 

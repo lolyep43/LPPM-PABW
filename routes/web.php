@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('fronted.index');
 });
 
+// Route::get('/login','AuthController@login');
+Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 
 Route::group(['middleware' => 'auth'], function () {

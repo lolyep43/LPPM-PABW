@@ -9,7 +9,7 @@ class qnaController extends Controller
 {
     public function index()
     {
-        $data = qnaModel::all();
+        $data = qnaModel::latest()->paginate(10);
         return view('admin.qna.index', compact('data'));
     }
 
