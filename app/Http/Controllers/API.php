@@ -434,8 +434,7 @@ class API extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
-            'role' => 'required',
+            'password' => 'required'
         ]);
 
         $data = User::findOrFail($id);
@@ -445,15 +444,13 @@ class API extends Controller
             $data_update = [
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'role' => $request->role
+                'password' => Hash::make($request->password)
             ];
         } else {
             $data_update = [
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'role' => $request->role
+                'password' => Hash::make($request->password)
             ];
         }
 
@@ -466,8 +463,7 @@ class API extends Controller
                 'id' => $data->id,
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'role' => $request->role
+                'password' => Hash::make($request->password)
             ],
             $data->update($data_update)
         ],200);
