@@ -13,67 +13,64 @@ class FAQTest extends TestCase
      *
      * @return void
      */
-    public function test_masuk_ke_dalam_menu_qna()
+    public function test_mengambil_data_faq()
     {
-        $login = $this->post('/login', [
-            'email' => 'admin@lppm.itk.ac.id',
-            'password' => 'ahmad123123',
+        $response = $this->postJson('api/login', [
+            'email' => 'ab3@lppm.itk.ac.id',
+            'password' => 'ahmad123123'
         ]);
 
-        $this->assertAuthenticated();
-
-        $response = $this->get('/QNA');
+        $this->withHeader('Authorization', 'Bearer ' . json_encode($response));
+        
+        $response = $this->get('api/lihat-faqs');
         $response->assertStatus(200);
     }
 
     public function test_input_data_menu_qna(){
-
-        $login = $this->post('/login', [
-            'email' => 'admin@lppm.itk.ac.id',
-            'password' => 'ahmad123123',
+        $login = $this->postJson('api/login', [
+            'email' => 'ab3@lppm.itk.ac.id',
+            'password' => 'ahmad123123'
         ]);
 
-        $this->assertAuthenticated();
+        $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
-        $response = $this->post('/QNA', [
+        $response = $this->post('api/tambah-faq', [
             'pertanyaan' => 'Sudah berapa udin mengenal anda?',
             'jawaban' => 'Gak tahu juga ga'
         ]);
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
         
     }
 
     public function test_edit_data_menu_qna(){
-
-        $login = $this->post('/login', [
-            'email' => 'admin@lppm.itk.ac.id',
-            'password' => 'ahmad123123',
+        $login = $this->postJson('api/login', [
+            'email' => 'ab3@lppm.itk.ac.id',
+            'password' => 'ahmad123123'
         ]);
 
-        $this->assertAuthenticated();
+        $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
-        $response = $this->put(route('QNA.update', 12), [
+        $response = $this->put('api/edit-faq/2', [
             'pertanyaan' => 'Sudah berapa lama perusahaan ini di kenal orang banyak?',
             'jawaban' => 'Gak tahu juga gan'
         ]);
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
         
     }
 
     public function test_delete_data_menu_qna(){
-
-        $login = $this->post('/login', [
-            'email' => 'admin@lppm.itk.ac.id',
-            'password' => 'ahmad123123',
+        $login = $this->postJson('api/login', [
+            'email' => 'ab3@lppm.itk.ac.id',
+            'password' => 'ahmad123123'
         ]);
 
-        $this->assertAuthenticated();
+        $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
-        $response = $this->delete(route('QNA.destroy', 17));
+        $response = $this->delete('/api/hapus-faq/25');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
         
     } 
 
