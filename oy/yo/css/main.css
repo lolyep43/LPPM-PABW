@@ -1,8 +1,11 @@
 :root{
     --mount-meadow: #ffc947;
-    --white-smoke: #f0f0f0;
+    --white-smoke: #143F6B;
+    --white : #f0f0f0;
+    --yellow : #FEB139;
     --night-rider: #343434;
     --black: #191b17;
+    --red : #F55353;
     --blue : #495057;
     --transition: all 0.5s ease-in-out;
 }
@@ -27,10 +30,11 @@ img{
 }
 a{
     text-decoration: none;
-    color: var(--black);
+    color: var(--mount-meadow);
 }
 li{
     list-style-type: none;
+    color: #f0f0f0;
 }
 button{
     cursor: pointer;
@@ -47,11 +51,25 @@ h1, h2, h3, h4, h5, h6{
     line-height: 1.25;
     font-weight: 400;
     text-transform: capitalize;
+    color: var(--white);
 }
 .text{
     margin: 0.6rem 0;
     opacity: 0.8;
+    color: var(--white);
 }
+
+.text1{
+    margin: 0.6rem 0;
+    opacity: 0.8;
+    color: var(--white-smoke);
+}
+.textteam{
+    margin: 0.6rem 0;
+    opacity: 0.8;
+    color: var(--white-smoke);
+}
+
 .center{
     display: flex;
     justify-content: center;
@@ -66,7 +84,7 @@ section{
 }
 .title h2{
     font-size: 2.2rem;
-    color: var(--night-rider);
+    color: var(--white);
 }
 .title .text{
     font-weight: 500;
@@ -123,7 +141,7 @@ section{
   }
 /* header */
 .header{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(../assets/coba1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.392), rgba(0, 0, 0, 0.7)), url(../assets/banner.jpg);
     min-height: 100vh;
     background-position: center;
     background-size: cover;
@@ -139,7 +157,7 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--white-smoke);
     z-index: 999;
 }
 .brand-and-toggler{
@@ -151,14 +169,14 @@ section{
 }
 .navbar-brand{
     font-weight: 500;
-    color: var(--night-rider);
+    color: var(--yellow);
 }
 .navbar-brand span{
-    color: var(--mount-meadow);
+    color: var(--red);
 }
 .navbar-toggler{
     border: none;
-    color: var(--mount-meadow);
+    color: var(--yellow);
 }
 .navbar-nav{
     margin: 0.2rem 0 0.6rem 0;
@@ -190,7 +208,7 @@ section{
     padding-bottom: 0.4rem;
 }
 .hero-div p{
-    color: var(--white-smoke);
+    color: var(#f0f0f0);
     font-size: 1.05rem;
     letter-spacing: 3px;
 }
@@ -213,7 +231,7 @@ section{
     border-color: var(--mount-meadow);
 }
 .btn-white{
-    background: #fff;
+    background: var(--white);
     color: var(--night-rider);
     transition: var(--transition);
 }
@@ -227,11 +245,11 @@ section{
     background: var(--white-smoke);
 }
 .detail-item{
-    background: #fff;
+    background: #FEB139;
     text-align: center;
     box-shadow: 0 1px 2px 0 rgba(90, 91, 95, 0.1);
     -webkit-box-shadow: 0 1px 2px 0 rgba(90, 91, 95, 0.1);
-    -moz-box-shadow: 0 1px 2px 0 rgba(90, 91, 95, 0.1);
+    -moz-box-shadow: 0 1px 2px 0 rgba(95, 95, 90, 0.1);
     margin: 2rem 0;
     padding: 3.5rem 1.5rem;
     border-radius: 4px;
@@ -240,7 +258,7 @@ section{
 .detail-item:hover{
     -webkit-box-shadow: 0 21px 19px -2px rgba(217, 217, 217, 1);
     -moz-box-shadow: 0 21px 19px -2px rgba(217, 217, 217, 1);
-    box-shadow: 0 21px 19px -2px rgba(217, 217, 217, 1);
+    box-shadow: 0 21px 19px -2px rgb(244, 227, 34);
     transform: translateY(-5px);
 }
 .detail-item span{
@@ -258,6 +276,10 @@ section{
     height: 2.5px;
 }
 /* about */
+.about{
+    background: var(--white-smoke);
+}
+
 .about .title{
     text-align: left;
 }
@@ -281,7 +303,7 @@ section{
 .about-item span{
     font-size: 1.1rem;
     color: #fff;
-    background: var(--mount-meadow);
+    background: var(--yellow);
     align-self: flex-start;
     padding: 0.4rem 0.7rem;
     border-radius: 2px;
@@ -289,12 +311,21 @@ section{
 }
 
 /* team */
+.team{
+    background: var(--yellow);
+}
+
 .team .row{
     margin-top: 2rem;
 }
 .team-item{
     margin: 2rem 0;
 }
+.team .title h2{
+    font-size: 2.2rem;
+    color: var(--white-smoke);
+}
+
 .team-img{
     position: relative;
 }
@@ -304,7 +335,7 @@ section{
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    background: var(--white-smoke);
+    background: var(#f0f0f0);
     opacity: 0;
     transition: var(--transition);
 }
@@ -339,7 +370,7 @@ section{
 
 /* FAQ */
 .faq{
-    background: #f9f9f9;
+    background: #143F6B;
 }
 .faq .row{
     margin-top: 2rem;
@@ -360,7 +391,7 @@ section{
     opacity: 0.8;
 }
 .faq-content{
-    background: #fff;
+    background: var(--white-smoke);
     overflow: hidden;
     height: 0;
     padding: 0 1.8rem;
@@ -451,6 +482,9 @@ section{
 }
 
 /* contact */
+.contact{
+    background: var(--white-smoke);
+}
 .contact .row{
     margin-top: 2rem;
 }
@@ -504,13 +538,14 @@ section{
 
 /* footer */
 .footer{
-    background: var(--blue);
+    background: var(--yellow);
     color: var(--white-smoke);
     padding: 2rem 0;
     height: 50vh;
 }
 .footer .text{
     opacity: 0.8;
+    color: #143F6B;
 }
 .footer-links{
     display: flex;
@@ -619,6 +654,8 @@ section{
     }
     .nav-link{
         color: var(--white-smoke);
+        font-size: 1rem;
+        font-weight: 500;
     }
     .hero-div h1{
         font-size: 3.8rem;
@@ -630,17 +667,17 @@ section{
 
     /* navbar change */
     .cng-navbar{
-        -webkit-box-shadow: 0 2px 5px 0 rgba(207, 205, 207, 0.3);
-        -moz-box-shadow: 0 2px 5px 0 rgba(207, 205, 207, 0.3);
-        box-shadow: 0 2px 5px 0 rgba(207, 205, 207, 0.3);
+        -webkit-box-shadow: 0 2px 5px 0 rgba(207, 207, 205, 0.678);
+        -moz-box-shadow: 0 2px 5px 0 rgba(207, 207, 205, 0.3);
+        box-shadow: 0 2px 5px 0 rgba(207, 207, 205, 0.3);
         margin-top: 0;
-        background: #fff;
+        background: var(--white-smoke);
     }
     .cng-navbar .navbar-brand{
-        color: var(--night-rider);
+        color: var(--yellow);
     }
     .cng-navbar .nav-link{
-        color: var(--night-rider);
+        color: var(--yellow);
     }
     .about .row{
         display: grid;
