@@ -25,7 +25,7 @@
                 <form class="" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                         <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control"></div>
-                        <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten"></textarea></div>
+                        <div class="position-relative form-group"><label>Deskripsi</label><input name="deskripsi" class="form-control" id="konten"></div>
                         <div class="position-relative form-group"><label>Foto</label><input name="foto" type="file" class="form-control-file">
                         <button class="mt-1 btn btn-primary" style="float:right">Publish</button>
                 </form>

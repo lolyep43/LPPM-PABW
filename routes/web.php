@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('fronted.index');
-});
+Route::get('/', 'landingPageController@dataLanding');
+Route::get('/list-blog', 'landingPageController@dataBlog')->name('blog-data.list');
+Route::get('/data-blog/{slug}', 'landingPageController@detailDataBlog')->name('blog-data.isi');
 
 // Route::get('/login','AuthController@login');
 Route::post('/postlogin', 'AuthController@postlogin');
@@ -31,4 +31,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('contact', 'ContactController');
     
 });
+
+
 require __DIR__.'/auth.php';
