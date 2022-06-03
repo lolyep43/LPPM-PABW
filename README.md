@@ -897,14 +897,18 @@ Request:
    - Body:
    
         {
-          "email" : "string",
+        
+          "email" : "string"
+          
         }
         
    - Response
         
         {
+        
           status : "string",
           massage : "string"
+          
         }
           
 # Melalukan Login
