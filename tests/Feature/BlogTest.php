@@ -36,10 +36,13 @@ class BlogTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
+        Storage::fake('local');
+        $foto = UploadedFile::fake()->create('foto.jpg');
+
         $response = $this->post('api/tambah-blog', [
             'judul' => 'Laravel sangat seru dan asik',
             'deskripsi' => 'Banyak hal yang dapat dilakukan dengan menggunakan laravel',
-            'foto' => new \Illuminate\Http\UploadedFile(resource_path('test-gambar\images (1).jpg'))
+            'foto' => $foto
         ]);
 
         $response->assertStatus(200);
@@ -54,10 +57,13 @@ class BlogTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
-        $response = $this->put('api/edit-faq/2', [
+        Storage::fake('local');
+        $foto = UploadedFile::fake()->create('foto.jpg');
+
+        $response = $this->put('api/edit-blog/5', [
             'judul' => 'Laravel sangat seru dan asik',
             'deskripsi' => 'Banyak hal yang dapat dilakukan dengan menggunakan laravel',
-            'foto' => new \Illuminate\Http\UploadedFile(resource_path('public/public/uploads/1654089673Petal.jpg'), '1654089673Petal.jpg', null, null, null, true)
+            'foto' => $foto
         ]);
 
         $response->assertStatus(200);
@@ -72,7 +78,7 @@ class BlogTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
-        $response = $this->delete('/api/hapus-blog/3');
+        $response = $this->delete('/api/hapus-blog/17');
 
         $response->assertStatus(200);
         

@@ -5,6 +5,9 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+
 
 class PortofolioTest extends TestCase
 {
@@ -22,7 +25,7 @@ class PortofolioTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($response));
         
-        $response = $this->get('api/lihat-portofolio');
+        $response = $this->get('api/lihat-portofolios');
         $response->assertStatus(200);
     }
 
@@ -34,12 +37,17 @@ class PortofolioTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
+        Storage::fake('local');
+        $foto = UploadedFile::fake()->create('foto.jpg');
+
         $response = $this->post('api/tambah-portofolio', [
+            'jenis' => 'ARP',
+            'judul' => 'Gusti Company',
             'problem' => 'Overthinking',
             'solusi' => 'Minum Kopi',
             'fitur' => 'kopi sachet',
             'metode' => 'Seduh pake air ledeng',
-            'foto' => new \Illuminate\Http\UploadedFile(resource_path('test-gambar\images (1).jpg'))
+            'foto' => $foto
         ]);
 
         $response->assertStatus(200);
@@ -54,12 +62,17 @@ class PortofolioTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
-        $response = $this->put('api/edit-portofolio/2', [
+        Storage::fake('local');
+        $foto = UploadedFile::fake()->create('foto.jpg');
+
+        $response = $this->put('api/edit-portofolio/5', [
+            'jenis' => 'ARP',
+            'judul' => 'Gusti Company',
             'problem' => 'Overthinking',
             'solusi' => 'Minum Kopi',
             'fitur' => 'kopi sachet',
             'metode' => 'Seduh pake air ledeng',
-            'foto' => new \Illuminate\Http\UploadedFile(resource_path('test-gambar\images (1).jpg'))
+            'foto' => $foto
         ]);
 
         $response->assertStatus(200);
