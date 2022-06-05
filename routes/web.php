@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'landingPageController@dataLanding');
 Route::get('/list-blog', 'landingPageController@dataBlog')->name('blog-data.list');
 Route::get('/data-blog/{slug}', 'landingPageController@detailDataBlog')->name('blog-data.isi');
+Route::get('/list-testimoni', 'landingPageController@dataPortofolio')->name('portofolio-data.list');
+Route::get('/detail-testimoni/{slug}', 'landingPageController@detailDataPortofolio')->name('portofolio-data.isi');
 
 // Route::get('/login','AuthController@login');
 Route::post('/postlogin', 'AuthController@postlogin');
