@@ -15,7 +15,7 @@
             {!!$portofolio->problem!!}
         </div>
         <br>
-        <div class="cardpor" style="color: black; font-weight:500; font-size:20px; text-align: center; background-color:rgb(138, 138, 138)">
+        <div class="cardpor" style="color: black; font-weight:500; font-size:20px; text-align: center;)">
             <img src="{{ asset('public/assets/ijo.png') }}" alt="">
             <h1>Solusi yang diberikan</h1>
             {!!$portofolio->solusi!!}
