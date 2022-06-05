@@ -63,9 +63,9 @@ class PortofolioTest extends TestCase
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
         Storage::fake('local');
-        $foto = UploadedFile::fake()->create('foto.jpg');
+        $foto = UploadedFile::fake()->create('hebat.jpg');
 
-        $response = $this->put('api/edit-portofolio/5', [
+        $response = $this->put('api/edit-portofolio/6', [
             'jenis' => 'ARP',
             'judul' => 'Gusti Company',
             'problem' => 'Overthinking',

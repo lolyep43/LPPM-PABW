@@ -35,9 +35,9 @@ class UsersTest extends TestCase
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
         $response = $this->post('api/tambah-user', [
-            'name' => 'paldiganteng1235',
-            'email' => 'paldisuiiii5@gmail.com',
-            'password' => 'paldi123'
+            'name' => 'nigga1235',
+            'email' => 'nigga@gmail.com',
+            'password' => 'paldi1231w23'
         ]);
 
         $response->assertStatus(200);

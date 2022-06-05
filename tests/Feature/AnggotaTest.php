@@ -8,14 +8,14 @@ use Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
-class BlogTest extends TestCase
+class AnggotaTest extends TestCase
 {
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_mengambil_data_blog()
+    public function test_mengambil_data_anggota()
     {
         $response = $this->postJson('api/login', [
             'email' => 'ab3@lppm.itk.ac.id',
@@ -24,11 +24,11 @@ class BlogTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($response));
         
-        $response = $this->get('api/lihat-blogs');
+        $response = $this->get('api/lihat-anggotas');
         $response->assertStatus(200);
     }
 
-    public function test_input_data_menu_blog(){
+    public function test_input_data_menu_anggota(){
         $login = $this->postJson('api/login', [
             'email' => 'ab3@lppm.itk.ac.id',
             'password' => 'ahmad123123'
@@ -39,9 +39,9 @@ class BlogTest extends TestCase
         Storage::fake('local');
         $foto = UploadedFile::fake()->create('foto.jpg');
 
-        $response = $this->post('api/tambah-blog', [
-            'judul' => 'Laravel sangat seru dan asik',
-            'deskripsi' => 'Banyak hal yang dapat dilakukan dengan menggunakan laravel',
+        $response = $this->post('api/tambah-anggota', [
+            'jabatan' => 'Laravel sangat seru dan asik',
+            'nama' => 'Banyak hal yang dapat dilakukan dengan menggunakan laravel',
             'foto' => $foto
         ]);
 
@@ -49,7 +49,7 @@ class BlogTest extends TestCase
         
     }
 
-    public function test_edit_data_menu_blog(){
+    public function test_edit_data_menu_anggota(){
         $login = $this->postJson('api/login', [
             'email' => 'ab3@lppm.itk.ac.id',
             'password' => 'ahmad123123'
@@ -60,9 +60,9 @@ class BlogTest extends TestCase
         Storage::fake('local');
         $foto = UploadedFile::fake()->create('hebat.jpg');
 
-        $response = $this->put('api/edit-blog/5', [
-            'judul' => 'Laravel sangat seru dan asik',
-            'deskripsi' => 'Banyak hal yang dapat dilakukan dengan menggunakan laravel',
+        $response = $this->put('api/edit-anggota/7', [
+            'jabatan' => 'Laravel keren',
+            'nama' => 'menggunakan laravel seru',
             'foto' => $foto
         ]);
 
@@ -70,7 +70,7 @@ class BlogTest extends TestCase
         
     }
 
-    public function test_delete_data_menu_blog(){
+    public function test_delete_data_menu_anggota(){
         $login = $this->postJson('api/login', [
             'email' => 'ab3@lppm.itk.ac.id',
             'password' => 'ahmad123123'
@@ -78,9 +78,9 @@ class BlogTest extends TestCase
 
         $this->withHeader('Authorization', 'Bearer ' . json_encode($login));
 
-        $response = $this->delete('/api/hapus-blog/17');
+        $response = $this->delete('/api/hapus-anggota/17');
 
         $response->assertStatus(200);
         
-    } 
+    }
 }
