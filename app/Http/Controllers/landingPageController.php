@@ -21,12 +21,22 @@ class landingPageController extends Controller
 
     public function dataBlog(){
         $blog = blogModel::latest()->paginate(9);
-        return view('display.list_blog', compact('blog'));
+        return view('display.blog.list_blog', compact('blog'));
     }
 
     public function detailDataBlog($slug){
         $data = blogModel::where('slug', $slug)->get();
-        return view('display.detail_blog', compact('data'));
+        return view('display.blog.detail_blog', compact('data'));
+    }
+
+    public function dataPortofolio(){
+        $portofolio = PortofolioModel::latest()->paginate(9);
+        return view('display.portofolio.list_portofolio', compact('portofolio'));
+    }
+
+    public function detailDataPortofolio($slug){
+        $data = PortofolioModel::where('slug', $slug)->get();
+        return view('display.portofolio.detail_portofolio', compact('data'));
     }
     
 }

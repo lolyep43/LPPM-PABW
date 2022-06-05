@@ -30,7 +30,9 @@
     <link href="{{ url('https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css') }}" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" integrity="sha512-kq3FES+RuuGoBW3a9R2ELYKRywUEQv0wvPTItv3DSGqjpbNtGWVdvT8qwdKkqvPzT93jp8tSF4+oN4IeTEIlQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <!--========== SCROLL TOP ==========-->
@@ -57,7 +59,7 @@
                 <a href="#about" class="nav-link">Tentang Kami</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Testimoni</a>
+                <a href="{{ route('portofolio-data.list')}}" class="nav-link">Testimoni</a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('/list-blog') }}" class="nav-link">Blog</a>
@@ -75,8 +77,7 @@
         <p class="animate__animated animate__fadeInUp animate__slow">The best way to connect people with your brand.</p>
 
         <div class="hero-btns animate__animated animate__fadeInUp animate__slow">
-          <button type="button" class="btn-trans">learn more</button>
-          <a href="#contact" class="nav-link"><button type="button" class="btn-white">Contact Us </button> </a> 
+          <a href="/#contact" class="nav-link"><button type="button" class="btn-white">Contact Us </button></a> 
         </div>
       </div>
     </header>

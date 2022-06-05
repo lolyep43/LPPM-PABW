@@ -98,6 +98,8 @@
               </div>
               @endforeach
             </div>
+        </div>
+      </section>
           
       <!-- end of team section -->
   
@@ -136,9 +138,16 @@
   
           <div class="row wow animate__animated animate__fadeInUp animate__slow">
             <div class="contact-left">
-              <h2>Send Message Here</h2>
               <form>
-                <input type="text" class="form-control" placeholder="Name" />
+                <h1>Masukkan daerah mu di sini</h1>
+                <select class="select2 form-control" id="select-provinsi" data-placeholder="Province">
+  
+                </select>
+                <div class="select2-divider"></div>
+                <select class="select2 form-control" id="select-kota" data-placeholder="City">
+                </select>
+                <h1 style="margin-top: 30px">Masukkan email dan text mu di sini</h1>
+                <input type="text" class="form-control" placeholder="Name"  />
                 <input type="email" class="form-control" placeholder="Email" />
                 <textarea placeholder="Message" rows="6"></textarea>
                 <button type="submit" class="submit-btn">Send Now</button>
@@ -149,10 +158,11 @@
               @foreach($contact as $contacts)
               <div>
                 <h2>Visit Office</h2>
-                <p class="text">{{$contacts->alamat}}</p>
+                <iframe src="https://maps.google.com/maps?q=-1.235622, 116.837431&amp;hl=id&amp;z=14&amp;output=embed" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
               </div>
               <div>
                 <h2>Call Us</h2>
+                <p class="text">{{$contacts->alamat}}
                 <p class="text">{{$contacts->nomor}}</p>
               </div>
               <div>
@@ -163,8 +173,8 @@
             </div>
           </div>
         </div>
+        <x-weather-card></x-weather-card>
       </section>
-      <!-- end of contact section -->
 @endsection
       
   

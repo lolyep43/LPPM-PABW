@@ -4,7 +4,6 @@
         <div class = "container">
           <div class = "title">
             <h2>Latest Blog</h2>
-            <p>recent blogs about art & design</p>
           </div>
           <div class = "blog-content">
             @foreach($blog as $blogs)
@@ -16,7 +15,12 @@
               <div class = "blog-text">
                 <span>{{$blogs->created_at}}</span>
                 <h2>{{$blogs->judul}}</h2>
-                <p>{!!$blogs->deskripsi!!}</p>
+                <?php
+                  $jumlah_kata = "30";
+                  $batas_kalimat = implode(" ", array_slice(explode(" ", $blogs->deskripsi), 0, $jumlah_kata));
+                  
+                ?>
+                <p>{!!$batas_kalimat!!}</p>
                 <a href = "{{ route('blog-data.isi', $blogs->slug)}}">Read More</a>
               </div>
             </div>

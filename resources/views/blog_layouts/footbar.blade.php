@@ -22,9 +22,11 @@
   <script src="{{ asset('resources/OwlCarousel2-2.3.4/dist/owl.carousel.js') }}"></script>
   <!-- wow js -->
   <script src="{{ asset('resources/WOW-master/dist/wow.js') }}"></script>
+  <!-- scroll reveal js -->
+  <script src="{{ asset('https://unpkg.com/scrollreveal') }}"></script>
+  <!-- select2 js -->
+  <script src="{{ asset('https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js') }}"></script>
   <!-- custom js -->
   <script src="{{ asset('js/script.js') }}"></script>
-  <!--========== SCROLL REVEAL ==========-->
-  <script src="{{ url('https://unpkg.com/scrollreveal') }}"></script>
 </body>
 </html>
