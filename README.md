@@ -10,6 +10,7 @@
 8. FAQ
 9. Contact Us
 10. Logout
+11. Refresh JWT
 
 
 
