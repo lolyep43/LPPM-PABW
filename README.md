@@ -3,7 +3,7 @@
 # Module
 1. Login
 2. Lupa Password
-4. Tentang Kami
+4. User
 5. Anggota
 6. Testimoni
 7. Blog
